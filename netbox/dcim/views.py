@@ -3175,7 +3175,7 @@ class ConsoleConnectionsListView(generic.ObjectListView):
 
     def get_extra_context(self, request):
         return {
-            'title': 'Console Connections'
+            'title': '控制台连接'
         }
 
 
@@ -3189,7 +3189,7 @@ class PowerConnectionsListView(generic.ObjectListView):
 
     def get_extra_context(self, request):
         return {
-            'title': 'Power Connections'
+            'title': '电源连接'
         }
 
 
@@ -3203,7 +3203,7 @@ class InterfaceConnectionsListView(generic.ObjectListView):
 
     def get_extra_context(self, request):
         return {
-            'title': 'Interface Connections'
+            'title': '接口连接'
         }
 
 

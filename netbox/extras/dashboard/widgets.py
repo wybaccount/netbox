@@ -125,7 +125,8 @@ class DashboardWidget:
 @register_widget
 class NoteWidget(DashboardWidget):
     default_title = _('Note')
-    description = _('Display some arbitrary custom content. Markdown is supported.')
+    # 仪表盘表单头部提示
+    description = _('显示任意自定义内容, 支持 Markdown.')
 
     class ConfigForm(WidgetConfigForm):
         content = forms.CharField(
@@ -139,7 +140,7 @@ class NoteWidget(DashboardWidget):
 @register_widget
 class ObjectCountsWidget(DashboardWidget):
     default_title = _('Object Counts')
-    description = _('Display a set of NetBox models and the number of objects created for each type.')
+    description = _('显示一组 NetBox 模型以及为每种类型创建的对象数量.')
     template_name = 'extras/dashboard/widgets/objectcounts.html'
 
     class ConfigForm(WidgetConfigForm):

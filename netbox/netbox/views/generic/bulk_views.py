@@ -635,7 +635,7 @@ class BulkEditView(GetReturnURLMixin, BaseMultiObjectView):
         # Retrieve objects being edited
         table = self.table(self.queryset.filter(pk__in=pk_list), orderable=False)
         if not table.rows:
-            messages.warning(request, "No {} were selected.".format(model._meta.verbose_name_plural))
+            messages.warning(request, "请先勾选数据")
             return redirect(self.get_return_url(request))
 
         return render(request, self.template_name, {
@@ -821,7 +821,7 @@ class BulkDeleteView(GetReturnURLMixin, BaseMultiObjectView):
         # Retrieve objects being deleted
         table = self.table(self.queryset.filter(pk__in=pk_list), orderable=False)
         if not table.rows:
-            messages.warning(request, "No {} were selected for deletion.".format(model._meta.verbose_name_plural))
+            messages.warning(request, "请先勾选数据")
             return redirect(self.get_return_url(request))
 
         return render(request, self.template_name, {

@@ -11,7 +11,7 @@ from markdown import markdown
 
 from netbox.config import get_config
 from utilities.markdown import StrikethroughExtension
-from utilities.utils import clean_html, foreground_color, title
+from utilities.utils import clean_html, foreground_color, title, VNP_map
 
 __all__ = (
     'bettertitle',
@@ -61,7 +61,11 @@ def bettertitle(value):
     Alternative to the builtin title(). Ensures that the first letter of each word is uppercase but retains the
     original case of all others.
     """
-    return title(value)
+    # table 顶部标题
+    if value in VNP_map():
+        return VNP_map()[value]
+    else:
+        return title(value)
 
 
 @register.filter()
@@ -91,7 +95,83 @@ def meta(model, attr):
         model: A Django model class or instance
         attr: The attribute name
     """
-    return getattr(model._meta, attr, '')
+    # 表单新增标题
+    if getattr(model._meta, attr, '') == 'rack reservation':
+        return '机架预定'
+    elif getattr(model._meta, attr, '') == 'contact group':
+        return '联系组'
+    elif getattr(model._meta, attr, '') == 'rack role':
+        return '机架角色'
+    elif getattr(model._meta, attr, '') == 'site':
+        return '站点'
+    elif getattr(model._meta, attr, '') == 'region':
+        return '地区'
+    elif getattr(model._meta, attr, '') == 'site group':
+        return '站点组'
+    elif getattr(model._meta, attr, '') == 'location':
+        return '地点'
+    elif getattr(model._meta, attr, '') == 'module':
+        return '模块'
+    elif getattr(model._meta, attr, '') == 'platform':
+        return '平台'
+    elif getattr(model._meta, attr, '') == 'virtual chassis':
+        return '虚拟机箱'
+    elif getattr(model._meta, attr, '') == 'virtual device context':
+        return '虚拟设备上下文'
+    elif getattr(model._meta, attr, '') == 'inventory item role':
+        return '库存项目角色'
+    elif getattr(model._meta, attr, '') == 'IP address':
+        return 'IP地址'
+    elif getattr(model._meta, attr, '') == 'IP range':
+        return 'Ip范围'
+    elif getattr(model._meta, attr, '') == 'prefix':
+        return '前缀'
+    elif getattr(model._meta, attr, '') == 'role':
+        return '角色'
+    elif getattr(model._meta, attr, '') == 'rack':
+        return '机架'
+    elif getattr(model._meta, attr, '') == 'device':
+        return '设备'
+    elif getattr(model._meta, attr, '') == 'device role':
+        return '设备角色'
+    elif getattr(model._meta, attr, '') == 'circuit':
+        return '电路'
+    elif getattr(model._meta, attr, '') == 'circuit type':
+        return '电路类型'
+    elif getattr(model._meta, attr, '') == 'module type':
+        return '模块类型'
+    elif getattr(model._meta, attr, '') == 'manufacturer':
+        return '制造商'
+    elif getattr(model._meta, attr, '') == 'device type':
+        return '设备类型'
+    elif getattr(model._meta, attr, '') == 'power feed':
+        return '电源'
+    elif getattr(model._meta, attr, '') == 'power panel':
+        return '电源面板'
+    elif getattr(model._meta, attr, '') == 'L2VPN termination':
+        return 'L2VPN终端'
+    elif getattr(model._meta, attr, '') == 'aggregate':
+        return '聚合'
+    elif getattr(model._meta, attr, '') == 'route target':
+        return '路由目标'
+    elif getattr(model._meta, attr, '') == 'service template':
+        return '服务模板'
+    elif getattr(model._meta, attr, '') == 'service':
+        return '服务'
+    elif getattr(model._meta, attr, '') == 'provider':
+        return '供应商'
+    elif getattr(model._meta, attr, '') == 'provider account':
+        return '供应商账户'
+    elif getattr(model._meta, attr, '') == 'provider network':
+        return '供应商网络'
+    elif getattr(model._meta, attr, '') == 'config context':
+        return '配置上下文'
+    elif getattr(model._meta, attr, '') == 'config template':
+        return '配置模板'
+    elif getattr(model._meta, attr, '') == 'wireless link':
+        return '无线连接'
+    else:
+        return getattr(model._meta, attr, '')
 
 
 @register.filter()

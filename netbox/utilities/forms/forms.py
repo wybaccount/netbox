@@ -105,7 +105,7 @@ class TableConfigForm(BootstrapMixin, forms.Form):
         widget=forms.SelectMultiple(
             attrs={'size': 10, 'class': 'form-select'}
         ),
-        label=_('Available Columns')
+        label=_('可用列')
     )
     columns = forms.MultipleChoiceField(
         choices=[],
@@ -113,7 +113,7 @@ class TableConfigForm(BootstrapMixin, forms.Form):
         widget=forms.SelectMultiple(
             attrs={'size': 10, 'class': 'form-select'}
         ),
-        label=_('Selected Columns')
+        label=_('已选列')
     )
 
     def __init__(self, table, *args, **kwargs):

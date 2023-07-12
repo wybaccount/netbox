@@ -41,6 +41,7 @@ class TableMixin:
             bulk_actions: Render checkboxes for object selection
         """
         table = self.table(data, user=request.user)
+        # print(table.columns.__dict__, '---------------')
         if 'pk' in table.base_columns and bulk_actions:
             table.columns.show('pk')
         table.configure(request)

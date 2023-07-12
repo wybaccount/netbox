@@ -44,13 +44,13 @@ Context:
   <ul class="nav nav-tabs px-3">
     <li class="nav-item" role="presentation">
       <button class="nav-link active" id="object-list-tab" data-bs-toggle="tab" data-bs-target="#object-list" type="button" role="tab" aria-controls="edit-form" aria-selected="true">
-        Results {% badge table.page.paginator.count %}
+        结果 {% badge table.page.paginator.count %}
       </button>
     </li>
     {% if filter_form %}
       <li class="nav-item" role="presentation">
         <button class="nav-link" id="filters-form-tab" data-bs-toggle="tab" data-bs-target="#filters-form" type="button" role="tab" aria-controls="object-list" aria-selected="false">
-          Filters
+          过滤器
           {% if filter_form %}{% badge filter_form.changed_data|length bg_color="primary" %}{% endif %}
         </button>
       </li>

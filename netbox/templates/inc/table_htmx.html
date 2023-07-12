@@ -19,11 +19,410 @@
               <a href="#"
                  hx-get="{{ table.htmx_url }}{% querystring table.prefixed_order_by_field=column.order_by_alias.next %}"
                  hx-target="closest .htmx-container"
+                 title="{{column.header}}"
                  {% if not table.embedded %}hx-push-url="true"{% endif %}
-              >{{ column.header }}</a>
+              >
+                {% if column.header == 'IP Address' %}
+                <span>IP 地址</span>
+                {% elif column.header == 'Status' %}
+                <span>状态</span>
+                {% elif column.header == 'Role' %}
+                <span>角色</span>
+                {% elif column.header == 'Tenant' or column.header == 'Tenants' %}
+                <span>租户</span>
+                {% elif column.header == 'Assigned' %}
+                <span>已分配</span>
+                {% elif column.header == 'Start address' %}
+                <span>起始地址</span> 
+                {% elif column.header == 'End address' %}
+                <span>结束地址</span> 
+                {% elif column.header == 'Size' %}
+                <span>大小</span> 
+                {% elif column.header == 'Description' %}
+                <span>描述</span>
+                {% elif column.header == 'Last updated' %}
+                <span>最后更新时间</span> 
+                {% elif column.header == 'Created' %}
+                <span>创建时间</span>
+                {% elif column.header == 'Comments' %}
+                <span>评论</span>
+                {% elif column.header == 'Longitude' %}
+                <span>经度</span>
+                {% elif column.header == 'Latitude' %}
+                <span>纬度</span>
+                {% elif column.header == 'Shipping address' %}
+                <span>送货地址</span>
+                {% elif column.header == 'Physical address' %}
+                <span>物理地址</span>
+                {% elif column.header == 'Time zone' %}
+                <span>时区</span>
+                {% elif column.header == 'Tenant Group' %}
+                <span>租户组</span>
+                {% elif column.header == 'Prefix' %}
+                <span>前缀</span>
+                {% elif column.header == 'IP Ranges' %}
+                <span>IP范围</span>
+                {% elif column.header == 'Children' %}
+                <span>子网掩码</span>
+                {% elif column.header == 'Site' or column.header == 'Sites' %}
+                <span>站点</span> 
+                {% elif column.header == 'Prefixes' %}
+                <span>前缀</span>
+                {% elif column.header == 'Name' %}
+                <span>名称</span>
+                {% elif column.header == 'Start' %}
+                <span>开始</span>
+                {% elif column.header == 'End' %}
+                <span>结尾</span>
+                {% elif column.header == 'Site Count' %}
+                <span>站点数量</span>
+                {% elif column.header == 'Provider Count' %}
+                <span>供应商数量</span>
+                {% elif column.header == 'Aggregate' %}
+                <span>聚合</span>
+                {% elif column.header == 'Added' %}
+                <span>添加</span>
+                {% elif column.header == 'Private' %}
+                <span>私有</span>
+                {% elif column.header == 'Aggregates' %}
+                <span>聚合</span>
+                {% elif column.header == 'Group' %}
+                <span>群组</span>
+                {% elif column.header == 'Scope type' %}
+                <span>范围类型</span>
+                {% elif column.header == 'Group ID' %}
+                <span>群组ID</span>
+                {% elif column.header == 'Protocol' %}
+                <span>协议</span>
+                {% elif column.header == 'Authentication type' %}
+                <span>身份验证类型</span>
+                {% elif column.header == 'Members' %}
+                <span>成员</span>
+                {% elif column.header == 'Ports' %}
+                <span>端口号</span>
+                {% elif column.header == 'Parent' %}
+                <span>主机</span>
+                {% elif column.header == 'Facility' %}
+                <span>设施</span>
+                {% elif column.header == 'Region' %}
+                <span>地区</span>
+                {% elif column.header == 'Racks' or column.header == 'Rack' %}
+                <span>机架</span>
+                {% elif column.header == 'Devices' or column.header == 'Device' %}
+                <span>设备</span>
+                {% elif column.header == 'Location' %}
+                <span>地点</span>
+                {% elif column.header == 'User' %}
+                <span>用户</span>
+                {% elif column.header == 'Facility ID' %}
+                <span>设施标识</span>
+                {% elif column.header == 'Height' %}
+                <span>高度</span>
+                {% elif column.header == 'Color' %}
+                <span>颜色</span>
+                {% elif column.header == 'Reservation' %}
+                <span>预留</span>
+                {% elif column.header == 'Assignments' %}
+                <span>分配</span>
+                {% elif column.header == 'Priority' %}
+                <span>优先级</span>
+                {% elif column.header == 'Object Type' %}
+                <span>对象类型</span>
+                {% elif column.header == 'Contact' or column.header == 'Contacts' %}
+                <span>联系方式</span>
+                {% elif column.header == 'Title' %}
+                <span>标题</span>
+                {% elif column.header == 'Phone' %}
+                <span>电话</span>
+                {% elif column.header == 'Email' %}
+                <span>邮件</span> 	
+                {% elif column.header == 'Manufacturer' %}
+                <span>制造商</span>
+                {% elif column.header == 'Type' %}
+                <span>类型</span> 	 
+                {% elif column.header == 'VM Role' %}
+                <span>VM角色</span> 
+                {% elif column.header == 'Domain' %}
+                <span>域</span> 	 
+                {% elif column.header == 'Master' %}
+                <span>主节点</span> 	 
+                {% elif column.header == 'Identifier' %}
+                <span>标识符</span> 
+                {% elif column.header == 'Device Type' or column.header == 'Device Types' %}
+                <span>设备类型</span>
+                {% elif column.header == 'Part number' %}
+                <span>零件号</span> 	
+                {% elif column.header == 'Height (U)' %}
+                <span>高度(U)</span> 	
+                {% elif column.header == 'Full Depth' %}
+                <span>全深度</span> 	
+                {% elif column.header == 'Instances' %}
+                <span>实例</span> 		
+                {% elif column.header == 'Module Type' or column.header == 'Module Types' %}
+                <span>模块类型</span> 	 
+                {% elif column.header == 'Inventory Items' %}
+                <span>库存物品</span> 	
+                {% elif column.header == 'Platforms' %}
+                <span>平台</span>
+                {% elif column.header == 'Label' %}
+                <span>标签</span>
+                {% elif column.header == 'Enabled' %}
+                <span>启用</span>
+                {% elif column.header == 'Rear port' %}
+                <span>后端口</span>
+                {% elif column.header == 'Position' %}
+                <span>位置</span> 	 	
+                {% elif column.header == 'Speed' %}
+                <span>速度</span> 	
+                {% elif column.header == 'Maximum draw' %}
+                <span>最大功耗</span> 	
+                {% elif column.header == 'Allocated draw' %}
+                <span>分配功耗</span> 	
+                {% elif column.header == 'Power port' %}
+                <span>电源端口</span> 	
+                {% elif column.header == 'Feed leg' %}
+                <span>电源线路</span> 	
+                {% elif column.header == 'Serial number' %}
+                <span>序列号</span> 	
+                {% elif column.header == 'Asset tag' %}
+                <span>资产标签</span>
+                {% elif column.header == 'Installed module' %}
+                <span>已安装模块</span>
+                {% elif column.header == 'Module status' %}
+                <span>模块状态</span>
+                {% elif column.header == 'Installed device' %}
+                <span>已安装设备</span>
+                {% elif column.header == 'Items' %}
+                <span>项目</span>
+                {% elif column.header == 'Interface A' %}
+                <span>接口A</span>
+                {% elif column.header == 'Interface B' %}
+                <span>接口B</span>
+                {% elif column.header == 'Auth Type' %}
+                <span>验证类型</span>
+                {% elif column.header == 'Reachable' %}
+                <span>可达性</span>
+                {% elif column.header == 'Console Port ' %}
+                <span>控制台端口</span>
+                {% elif column.header == 'Power Port' %}
+                <span>电源端口</span>
+                {% elif column.header == 'Circuit ID' %}
+                <span>电路ID</span>
+                {% elif column.header == 'Provider' %}
+                <span>供应商</span>
+                {% elif column.header == 'Circuits' %}
+                <span>电路</span>
+                {% elif column.header == 'Account Count' %}
+                <span>账户数量</span>
+                {% elif column.header == 'Account ID' %}
+                <span>账户ID</span>
+                {% elif column.header == 'Service ID' %}
+                <span>服务ID</span>
+                {% elif column.header == 'Power panel' %}
+                <span>电源面板</span>
+                {% elif column.header == 'Phase' %}
+                <span>阶段</span>
+                {% elif column.header == 'Supply' %}
+                <span>供应</span>
+                {% elif column.header == 'Voltage' %}
+                <span>电压</span>
+                {% elif column.header == 'Amperage' %}
+                <span>安培数</span>
+                {% elif column.header == 'Cable' %}
+                <span>电缆</span>
+                {% elif column.header == 'Feeds' %}
+                <span>源</span> 	
+                {% elif column.header == 'Weight' %}
+                <span>重量</span> 
+                {% elif column.header == 'Active' %}
+                <span>活跃</span> 
+                {% elif column.header == 'Synced' %}
+                <span>同步</span>  	
+                {% elif column.header == 'Platform' %}
+                <span>平台</span>
+                {% elif column.header == 'Site Group' %}
+                <span>站点组</span>
+                {% elif column.header == 'Position (U)' %}
+                <span>位置(U)</span>
+                {% elif column.header == 'Rack face' %}
+                <span>机柜正面</span>
+                {% elif column.header == 'Airflow' %}
+                <span>空气流动</span>
+                {% elif column.header == 'IPv4 Address' %}
+                <span>IPv4地址</span>
+                {% elif column.header == 'IPv6 Address' %}
+                <span>IPv6地址</span>
+                {% elif column.header == 'Cluster' %}
+                <span>集群</span>
+                {% elif column.header == 'Virtual chassis' %}
+                <span>虚拟机箱</span>
+                {% elif column.header == 'Config template' %}
+                <span>配置模板</span>
+                {% elif column.header == 'Module bay' %}
+                <span>模块托架</span>
+                {% elif column.header == 'Module type' %}
+                <span>模块类型</span>
+                {% elif column.header == 'NAPALM arguments' %}
+                <span>NAPALM参数</span>
+                {% elif column.header == 'NAPALM driver' %}
+                <span>NAPALM驱动</span>
+                {% elif column.header == 'Default platform' %}
+                <span>默认平台</span>
+                {% elif column.header == 'Parent/child status' %}
+                <span>父/子状态</span>
+                {% elif column.header == 'Module' %}
+                <span>模块</span>
+                {% elif column.header == 'Management only' %}
+                <span>仅限管理</span>
+                {% elif column.header == 'Speed (Kbps)' %}
+                <span>速度(Kbps)</span>
+                {% elif column.header == 'Duplex' %}
+                <span>复式</span>
+                {% elif column.header == 'Mode' %}
+                <span>模式</span>
+                {% elif column.header == 'MAC Address' %}
+                <span>MAC地址</span>
+                {% elif column.header == 'PoE mode' %}
+                <span>PoE模式</span>
+                {% elif column.header == 'PoE type' %}
+                <span>PoE类型</span>
+                {% elif column.header == 'Wireless role' %}
+                <span>无线角色</span>
+                {% elif column.header == 'Wireless channel' %}
+                <span>无线通道</span>
+                {% elif column.header == 'Channel frequency (MHz)' %}
+                <span>信道频率(MHz)</span>
+                {% elif column.header == 'Channel width (MHz)' %}
+                <span>信道宽度(MHz)</span>
+                {% elif column.header == 'Transmit power (dBm)' %}
+                <span>发射功率(dBm)</span>
+                {% elif column.header == 'Mark connected' %}
+                <span>标记已连接</span>
+                {% elif column.header == 'Wireless link' %}
+                <span>无线连接</span>
+                {% elif column.header == 'Authentication key' %}
+                <span>身份验证密钥</span>
+                {% elif column.header == 'Account' %}
+                <span>账户</span>
+                {% elif column.header == 'Installed' %}
+                <span>已安装</span>
+                {% elif column.header == 'Terminates' %}
+                <span>终止</span>
+                {% elif column.header == 'Commit Rate' %}
+                <span>提交率</span>
+                {% elif column.header == 'Accounts' %}
+                <span>账户</span>
+                {% elif column.header == 'Max utilization' %}
+                <span>最大利用率</span>
+                {% elif column.header == 'Available power (VA)' %}
+                <span>可用功率 (VA)</span>
+                {% elif column.header == 'Data source' %}
+                <span>数据源</span>
+                {% elif column.header == 'Data file' %}
+                <span>数据文件</span>
+                {% elif column.header == 'Data synced' %}
+                <span>数据已同步</span>
+                {% elif column.header == 'Time' %}
+                <span>时间</span>
+                {% elif column.header == 'Username' %}
+                <span>用户名</span>
+                {% elif column.header == 'Action' %}
+                <span>行为</span>
+                {% elif column.header == 'Request ID' %}
+                <span>请求ID</span>
+                {% elif column.header == 'Auth cipher' %}
+                <span>身份验证密码</span>
+                {% elif column.header == 'Pre-shared key' %}
+                <span>预共享密钥</span>
+                {% elif column.header == 'Unique' %}
+                <span>唯一</span> 	
+                {% else %}
+                {{ column.header }}
+                {% endif %}
+              </a>
             </th>
           {% else %}
-            <th {{ column.attrs.th.as_html }}>{{ column.header }}</th>
+          <th {{ column.attrs.th.as_html }}>
+            {% if column.header == 'Utilization' %}
+            <span>使用率</span>
+            {% elif column.header == 'Full Name' %}
+            <span>全称</span>
+            {% elif column.header == 'Tenants' %}
+            <span>租户</span>
+            {% elif column.header == 'Platforms' %}
+            <span>平台</span>
+            {% elif column.header == 'Sites' %}
+            <span>站点</span> 
+            {% elif column.header == 'Regions' %}
+            <span>地区</span>
+            {% elif column.header == 'Locations' %}
+            <span>位置</span>
+            {% elif column.header == 'Roles' %}
+            <span>角色</span>
+            {% elif column.header == 'Cluster types' %}
+            <span>集群类型</span>
+            {% elif column.header == 'Cluster groups' %}
+            <span>集群组</span>
+            {% elif column.header == 'Clusters' %}
+            <span>集群</span>
+            {% elif column.header == 'Tenant groups' %}
+            <span>租户组</span>
+            {% elif column.header == 'Object Site' %}
+            <span>对象站点</span>
+            {% elif column.header == 'Object Parent' %}
+            <span>对象父级</span>
+            {% elif column.header == 'Import targets' %}
+            <span>导入目标</span>
+            {% elif column.header == 'Export targets' %}
+            <span>导出目标</span>
+            {% elif column.header == 'Cable Color' %}
+            <span>电缆颜色</span>
+            {% elif column.header == 'Wireless LANs' %}
+            <span>无线LANs</span>
+            {% elif column.header == 'Tags' %}
+            <span>标签</span>
+            {% elif column.header == 'Link Peers' %}
+              <span>链接对等体</span>
+            {% elif column.header == 'Contact' or column.header == 'Contacts' %}
+            <span>联系方式</span>
+            {% elif column.header == 'Connection' %}
+              <span>连接</span>
+            {% elif column.header == 'Object' %}
+              <span>对象</span>
+            {% elif column.header == 'Prefixes' %}
+            <span>前缀</span> 
+            {% elif column.header == 'Scope' %}
+            <span>范围</span>
+            {% elif column.header == 'IP Addresses' %}
+            <span>IP地址</span>
+            {% elif column.header == 'Space' %}
+            <span>空间</span>
+            {% elif column.header == 'Units' %}
+            <span>单位</span>
+            {% elif column.header == 'Rack A' %}
+            <span>机架A</span>
+            {% elif column.header == 'Rack B' %}
+            <span>机架B</span>
+            {% elif column.header == 'Termination A' %}
+            <span>终端A</span>
+            {% elif column.header == 'Termination B' %}
+            <span>终端B</span>
+            {% elif column.header == 'Site A' %}
+            <span>站点A</span>
+            {% elif column.header == 'Site B' %}
+            <span>站点B</span>
+            {% elif column.header == 'Device A' %}
+            <span>设备A</span>
+            {% elif column.header == 'Device B' %}
+            <span>设备B</span>
+            {% elif column.header == 'Location A' %}
+            <span>地点A</span> 		
+            {% elif column.header == 'Location B' %}
+            <span>地点B</span>
+            {% else %}
+            {{ column.header }}
+            {% endif %}
+          </th>
           {% endif %}
         {% endfor %}
       </tr>
@@ -39,7 +438,7 @@
     {% empty %}
       {% if table.empty_text %}
         <tr>
-          <td colspan="{{ table.columns|length }}" class="text-center text-muted">&mdash; {{ table.empty_text }} &mdash;</td>
+          <td colspan="{{ table.columns|length }}" class="text-center text-muted">&mdash; 暂无数据 &mdash;</td>
         </tr>
       {% endif %}
     {% endfor %}

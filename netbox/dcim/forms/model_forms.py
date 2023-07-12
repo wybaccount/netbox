@@ -130,11 +130,11 @@ class SiteForm(TenancyForm, NetBoxModelForm):
     comments = CommentField()
 
     fieldsets = (
-        ('Site', (
+        ('站点', (
             'name', 'slug', 'status', 'region', 'group', 'facility', 'asns', 'time_zone', 'description', 'tags',
         )),
-        ('Tenancy', ('tenant_group', 'tenant')),
-        ('Contact Info', ('physical_address', 'shipping_address', 'latitude', 'longitude')),
+        ('租赁', ('tenant_group', 'tenant')),
+        ('联系方式', ('physical_address', 'shipping_address', 'latitude', 'longitude')),
     )
 
     class Meta:
@@ -1049,7 +1049,7 @@ class InterfaceForm(InterfaceCommonForm, ModularDeviceComponentForm):
     parent = DynamicModelChoiceField(
         queryset=Interface.objects.all(),
         required=False,
-        label=_('Parent interface'),
+        label=_('上级接口'),
         query_params={
             'device_id': '$device',
         }

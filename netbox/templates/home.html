@@ -33,7 +33,7 @@
     <div class="d-flex px-3">
       <div class="flex-grow-1">
         <button type="button" id="unlock_dashboard" class="btn btn-light btn-sm" data-bs-toggle="collapse" data-bs-target=".multi-collapse">
-          <i class="mdi mdi-lock-open-outline"></i> Unlock Dashboard
+          <i class="mdi mdi-lock-open-outline"></i> 解锁仪表盘
         </button>
       </div>
     </div>
@@ -42,7 +42,7 @@
     <div class="d-flex px-3">
       <div class="flex-grow-1">
         <button type="button" id="lock_dashboard" class="btn btn-light btn-sm" data-bs-toggle="collapse" data-bs-target=".multi-collapse">
-          <i class="mdi mdi-lock-outline"></i> Lock Dashboard
+          <i class="mdi mdi-lock-outline"></i> 锁定仪表盘
         </button>
       </div>
       <div>
@@ -53,13 +53,13 @@
           data-bs-target="#htmx-modal"
           class="btn btn-success btn-sm"
         >
-          <i class="mdi mdi-plus"></i> Add Widget
+          <i class="mdi mdi-plus"></i> 添加小部件
         </a>
         <button id="save_dashboard" class="btn btn-primary btn-sm" data-url="{% url 'extras-api:dashboard' %}">
-          <i class="mdi mdi-content-save-outline"></i> Save Layout
+          <i class="mdi mdi-content-save-outline"></i> 保存布局
         </button>
         <a href="{% url 'extras:dashboard_reset' %}" class="btn btn-danger btn-sm">
-          <i class="mdi mdi-backspace"></i>  Reset Dashboard
+          <i class="mdi mdi-backspace"></i>  重置仪表盘
         </a>
       </div>
     </div>
