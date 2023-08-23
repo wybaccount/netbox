@@ -1,7 +1,7 @@
 {% load helpers %}
 
 <div class="card">
-  <h5 class="card-header">Related Objects</h5>
+  <h5 class="card-header">相关对象</h5>
   <ul class="list-group list-group-flush">
     {% for qs, filter_param in related_models %}
       {% with viewname=qs.model|viewname:"list" %}

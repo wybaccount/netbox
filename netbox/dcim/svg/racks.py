@@ -286,7 +286,7 @@ class RackElevationSVG:
 
             link = Hyperlink(href=url_string.format(unit), target='_parent')
             link.add(Rect((x_offset, y_offset), (self.unit_width, self.unit_height), class_='slot'))
-            link.add(Text('add device', insert=text_coords, class_='add-device'))
+            link.add(Text('添加设备', insert=text_coords, class_='add-device'))
 
             self.drawing.add(link)
 

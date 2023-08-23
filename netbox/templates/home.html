@@ -26,6 +26,7 @@
   {# Render the user's customized dashboard #}
   <div class="grid-stack" id="dashboard">
     {% for widget in dashboard %}
+    <!-- <div>{{ widget.title }}</div> -->
       {% include 'extras/dashboard/widget.html' %}
     {% endfor %}
   </div>

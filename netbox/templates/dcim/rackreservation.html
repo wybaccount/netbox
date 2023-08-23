@@ -15,13 +15,13 @@
 	<div class="col col-12 col-xl-5">
         <div class="card">
             <h5 class="card-header">
-                Rack
+                机架
             </h5>
             <div class="card-body">
                 <table class="table table-hover attr-table">
                     {% with rack=object.rack %}
                         <tr>
-                            <th scope="row">Site</th>
+                            <th scope="row">站点</th>
                             <td>
                                 {% if rack.site.region %}
                                     {{ rack.site.region|linkify }} /
@@ -30,11 +30,11 @@
                             </td>
                         </tr>
                         <tr>
-                            <th scope="row">Location</th>
+                            <th scope="row">地点</th>
                             <td>{{ rack.location|linkify|placeholder }}</td>
                         </tr>
                         <tr>
-                            <th scope="row">Rack</th>
+                            <th scope="row">机架</th>
                             <td>{{ rack|linkify }}</td>
                         </tr>
                     {% endwith %}
@@ -43,16 +43,16 @@
         </div>
         <div class="card">
             <h5 class="card-header">
-                Reservation Details
+                预定详情
             </h5>
             <div class="card-body">
                 <table class="table table-hover attr-table">
                     <tr>
-                        <th scope="row">Units</th>
+                        <th scope="row">单位</th>
                         <td>{{ object.unit_list }}</td>
                     </tr>
                     <tr>
-                        <th scope="row">Tenant</th>
+                        <th scope="row">租户</th>
                         <td>
                             {% if object.tenant.group %}
                                 {{ object.tenant.group|linkify }} /
@@ -61,11 +61,11 @@
                         </td>
                     </tr>
                     <tr>
-                        <th scope="row">User</th>
+                        <th scope="row">用户</th>
                         <td>{{ object.user }}</td>
                     </tr>
                     <tr>
-                        <th scope="row">Description</th>
+                        <th scope="row">描述</th>
                         <td>{{ object.description }}</td>
                     </tr>
                 </table>
@@ -80,13 +80,13 @@
         <div class="row" style="margin-bottom: 20px">
             <div class="col col-md-6 col-sm-6 col-xs-12 text-center">
                 <div style="margin-left: 30px">
-                    <h4>Front</h4>
+                    <h4>正面</h4>
                     {% include 'dcim/inc/rack_elevation.html' with object=object.rack face='front' %}
                 </div>
             </div>
             <div class="col col-md-6 col-sm-6 col-xs-12 text-center">
                 <div style="margin-left: -30px">
-                    <h4>Rear</h4>
+                    <h4>背面</h4>
                     {% include 'dcim/inc/rack_elevation.html' with object=object.rack face='rear' %}
                 </div>
             </div>

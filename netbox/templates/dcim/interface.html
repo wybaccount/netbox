@@ -23,31 +23,31 @@
   <div class="row mb-3">
     <div class="col col-md-6">
       <div class="card">
-        <h5 class="card-header">Interface</h5>
+        <h5 class="card-header">接口</h5>
         <div class="card-body">
           <table class="table table-hover">
             <tr>
-              <th scope="row">Device</th>
+              <th scope="row">设备</th>
               <td>{{ object.device|linkify }}</td>
             </tr>
             <tr>
-              <th scope="row">Module</th>
+              <th scope="row">模块</th>
               <td>{{ object.module|linkify|placeholder }}</td>
             </tr>
             <tr>
-              <th scope="row">Name</th>
+              <th scope="row">名称</th>
               <td>{{ object.name }}</td>
             </tr>
             <tr>
-              <th scope="row">Label</th>
+              <th scope="row">标签</th>
               <td>{{ object.label|placeholder }}</td>
             </tr>
             <tr>
-              <th scope="row">Type</th>
+              <th scope="row">类型</th>
               <td>{{ object.get_type_display }}</td>
             </tr>
             <tr>
-              <th scope="row">Speed/Duplex</th>
+              <th scope="row">速度/双工</th>
               <td>
                 {{ object.speed|humanize_speed|placeholder }} /
                 {{ object.get_duplex_display|placeholder }}
@@ -58,31 +58,31 @@
               <td>{{ object.mtu|placeholder }}</td>
             </tr>
             <tr>
-              <th scope="row">Enabled</th>
+              <th scope="row">启用</th>
               <td>{% checkmark object.enabled %}</td>
             </tr>
             <tr>
-              <th scope="row">Management Only</th>
+              <th scope="row">仅管理</th>
               <td>{% checkmark object.mgmt_only %}</td>
             </tr>
             <tr>
-              <th scope="row">Description</th>
+              <th scope="row">秒时</th>
               <td>{{ object.description|placeholder }} </td>
             </tr>
             <tr>
-              <th scope="row">PoE Mode</th>
+              <th scope="row">PoE 模式</th>
               <td>{{ object.get_poe_mode_display|placeholder }}</td>
             </tr>
             <tr>
-              <th scope="row">PoE Type</th>
+              <th scope="row">PoE 类型</th>
               <td>{{ object.get_poe_type_display|placeholder }}</td>
             </tr>
             <tr>
-              <th scope="row">802.1Q Mode</th>
+              <th scope="row">802.1Q 模式</th>
               <td>{{ object.get_mode_display|placeholder }}</td>
             </tr>
             <tr>
-              <th scope="row">Transmit power (dBm)</th>
+              <th scope="row">发射功率 (dBm)</th>
               <td>{{ object.tx_power|placeholder }}</td>
             </tr>
           </table>

@@ -28,7 +28,7 @@ ORGANIZATION_MENU = Menu(
                 get_model_item('dcim', 'rackreservation', _('预订')),
                 MenuItem(
                     link='dcim:rack_elevation_list',
-                    link_text=_('垂直布局'),
+                    link_text=_('立面图'),
                     permissions=['dcim.view_rack']
                 ),
             ),
@@ -80,7 +80,7 @@ DEVICES_MENU = Menu(
             items=(
                 get_model_item('dcim', 'interface', _('接口')),
                 get_model_item('dcim', 'frontport', _('前端端口')),
-                get_model_item('dcim', 'rearport', _('后端口')),
+                get_model_item('dcim', 'rearport', _('背面端口')),
                 get_model_item('dcim', 'consoleport', _('控制台端口')),
                 get_model_item('dcim', 'consoleserverport', _('控制台服务器端口')),
                 get_model_item('dcim', 'powerport', _('电源端口')),

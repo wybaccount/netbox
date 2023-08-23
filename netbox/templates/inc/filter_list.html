@@ -11,7 +11,33 @@
       {% for heading, fields in filter_form.fieldsets %}
         <div class="col col-12">
           {% if heading %}
-            <h6>{{ heading }}111</h6>
+            {% if heading == 'Attributes' %}
+            <h6>属性</h6>
+            {% elif heading == 'Tenant' %}
+            <h6>租户</h6>
+            {% elif heading == 'Contacts' %}
+            <h6>联系方式</h6>
+            {% elif heading == 'Location' %}
+            <h6>地点</h6>
+            {% elif heading == 'Function' %}
+            <h6>功能</h6>
+            {% elif heading == 'Hardware' %}
+            <h6>硬件</h6>
+            {% elif heading == 'Weight' %}
+            <h6>重量</h6>
+            {% elif heading == 'User' %}
+            <h6>用户</h6>
+            {% elif heading == 'Rack' %}
+            <h6>机架</h6>
+            {% elif heading == 'Assignment' %}
+            <h6>分配</h6>
+            {% elif heading == 'Operation' %}
+            <h6>操作</h6>
+            {% elif heading == 'Components' %}
+            <h6>组件</h6>
+            {% else %}
+            <h6>{{ heading }}</h6>
+            {% endif %}
           {% endif %}
           {% for name in fields %}
             {% with field=filter_form|get_item:name %}
@@ -46,10 +72,10 @@
     </div>
     <div class="card-footer text-end noprint border-0">
       <button type="button" class="btn btn-sm btn-outline-danger m-1" data-reset-select>
-        <i class="mdi mdi-backspace"></i> Reset
+        <i class="mdi mdi-backspace"></i> 重置
       </button>
       <button type="submit" class="btn btn-sm btn-primary m-1">
-        <i class="mdi mdi-magnify"></i> Search
+        <i class="mdi mdi-magnify"></i> 搜索
       </button>
     </div>
   </div>

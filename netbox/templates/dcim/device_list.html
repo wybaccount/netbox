@@ -5,7 +5,7 @@
   {% if perms.dcim.change_device %}
     <div class="dropdown">
       <button type="button" class="btn btn-sm btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        <i class="mdi mdi-plus-thick" aria-hidden="true"></i> Add Components
+        <i class="mdi mdi-plus-thick" aria-hidden="true"></i> 添加组件
       </button>
       <ul class="dropdown-menu">
         {% if perms.dcim.add_consoleport %}
@@ -78,7 +78,7 @@
     <div class="btn-group" role="group">
       {% bulk_edit_button model query_params=request.GET %}
       <button type="submit" name="_rename" formaction="{% url 'dcim:device_bulk_rename' %}?return_url={% url 'dcim:device_list' %}{% if request.GET %}?{{ request.GET.urlencode }}{% endif %}" class="btn btn-outline-warning btn-sm">
-        <i class="mdi mdi-pencil-outline" aria-hidden="true"></i> Rename
+        <i class="mdi mdi-pencil-outline" aria-hidden="true"></i> 重命名
       </button>
     </div>
   {% endif %}

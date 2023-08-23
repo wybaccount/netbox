@@ -276,30 +276,33 @@ class ConfigTemplateTable(NetBoxTable):
 class ObjectChangeTable(NetBoxTable):
     time = tables.DateTimeColumn(
         linkify=True,
-        format=settings.SHORT_DATETIME_FORMAT
+        format=settings.SHORT_DATETIME_FORMAT,
+        verbose_name='时间'
     )
     user_name = tables.Column(
-        verbose_name='Username'
+        verbose_name='用户名'
     )
     full_name = tables.TemplateColumn(
         accessor=tables.A('user'),
         template_code=OBJECTCHANGE_FULL_NAME,
-        verbose_name='Full Name',
+        verbose_name='全称',
         orderable=False
     )
-    action = columns.ChoiceFieldColumn()
+    action = columns.ChoiceFieldColumn(
+        verbose_name='状态'
+    )
     changed_object_type = columns.ContentTypeColumn(
-        verbose_name='Type'
+        verbose_name='类型'
     )
     object_repr = tables.TemplateColumn(
         accessor=tables.A('changed_object'),
         template_code=OBJECTCHANGE_OBJECT,
-        verbose_name='Object',
+        verbose_name='对象',
         orderable=False
     )
     request_id = tables.TemplateColumn(
         template_code=OBJECTCHANGE_REQUEST_ID,
-        verbose_name='Request ID'
+        verbose_name='请求 ID'
     )
     actions = columns.ActionsColumn(
         actions=()

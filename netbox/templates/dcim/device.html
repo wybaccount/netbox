@@ -9,11 +9,11 @@
     <div class="row">
         <div class="col col-12 col-xl-6">
             <div class="card">
-                <h5 class="card-header">Device</h5>
+                <h5 class="card-header">设备</h5>
                 <div class="card-body">
                     <table class="table table-hover attr-table">
                         <tr>
-                            <th scope="row">Region</th>
+                            <th scope="row">地区</th>
                             <td>
                                 {% if object.site.region %}
                                     {% for region in object.site.region.get_ancestors %}
@@ -26,11 +26,11 @@
                             </td>
                         </tr>
                         <tr>
-                            <th scope="row">Site</th>
+                            <th scope="row">站点</th>
                             <td>{{ object.site|linkify }}</td>
                         </tr>
                         <tr>
-                            <th scope="row">Location</th>
+                            <th scope="row">地点</th>
                             <td>
                             {% if object.location %}
                                 {% for location in object.location.get_ancestors %}
@@ -43,7 +43,7 @@
                             </td>
                         </tr>
                         <tr>
-                            <th scope="row">Rack</th>
+                            <th scope="row">机架</th>
                             <td class="position-relative">
                                 {% if object.rack %}
                                     {{ object.rack|linkify }}
@@ -58,7 +58,7 @@
                             </td>
                         </tr>
                         <tr>
-                            <th scope="row">Position</th>
+                            <th scope="row">位置</th>
                             <td>
                                 {% if object.parent_bay %}
                                     {% with object.parent_bay.device as parent %}
@@ -77,7 +77,7 @@
                             </td>
                         </tr>
                         <tr>
-                            <th scope="row">Tenant</th>
+                            <th scope="row">租户</th>
                             <td>
                                 {% if object.tenant.group %}
                                     {{ object.tenant.group|linkify }} /
@@ -86,31 +86,31 @@
                             </td>
                         </tr>
                         <tr>
-                            <th scope="row">Device Type</th>
+                            <th scope="row">设备类型</th>
                             <td>
                                 {{ object.device_type|linkify:"get_full_name" }} ({{ object.device_type.u_height|floatformat }}U)
                             </td>
                         </tr>
                         <tr>
-                            <th scope="row">Description</th>
+                            <th scope="row">描述</th>
                             <td>{{ object.description|placeholder }}</td>
                         </tr>
                         <tr>
-                            <th scope="row">Airflow</th>
+                            <th scope="row">空气流动</th>
                             <td>
                                 {{ object.get_airflow_display|placeholder }}
                             </td>
                         </tr>
                         <tr>
-                            <th scope="row">Serial Number</th>
+                            <th scope="row">序列号</th>
                             <td class="font-monospace">{{ object.serial|placeholder }}</td>
                         </tr>
                         <tr>
-                            <th scope="row">Asset Tag</th>
+                            <th scope="row">资产标签</th>
                             <td class="font-monospace">{{ object.asset_tag|placeholder }}</td>
                         </tr>
                         <tr>
-                            <th scope="row">Config Template</th>
+                            <th scope="row">配置模板</th>
                             <td>{{ object.config_template|linkify|placeholder }}</td>
                         </tr>
                     </table>
@@ -158,7 +158,7 @@
             {% include 'inc/panels/tags.html' %}
             {% include 'inc/panels/comments.html' %}
             <div class="card">
-              <h5 class="card-header">Virtual Device Contexts</h5>
+              <h5 class="card-header">虚拟设备上下文</h5>
               <div class="card-body htmx-container table-responsive"
                 hx-get="{% url 'dcim:virtualdevicecontext_list' %}?device_id={{ object.pk }}"
                 hx-trigger="load"
@@ -166,7 +166,7 @@
               {% if perms.dcim.add_virtualdevicecontext %}
                 <div class="card-footer text-end noprint">
                   <a href="{% url 'dcim:virtualdevicecontext_add' %}?device={{ object.pk }}" class="btn btn-sm btn-primary">
-                    <span class="mdi mdi-plus-thick" aria-hidden="true"></span> Create VDC
+                    <span class="mdi mdi-plus-thick" aria-hidden="true"></span> 创建 VDC
                   </a>
                 </div>
               {% endif %}
@@ -175,23 +175,23 @@
         </div>
         <div class="col col-12 col-xl-6">
             <div class="card">
-                <h5 class="card-header">Management</h5>
+                <h5 class="card-header">管理</h5>
                 <div class="card-body">
                     <table class="table table-hover attr-table">
                         <tr>
-                            <th scope="row">Status</th>
+                            <th scope="row">状态</th>
                             <td>{% badge object.get_status_display bg_color=object.get_status_color %}</td>
                         </tr>
                         <tr>
-                            <th scope="row">Role</th>
+                            <th scope="row">角色</th>
                             <td>{{ object.device_role|linkify }}</td>
                         </tr>
                         <tr>
-                            <th scope="row">Platform</th>
+                            <th scope="row">平台</th>
                             <td>{{ object.platform|linkify|placeholder }}</td>
                         </tr>
                         <tr>
-                            <th scope="row">Primary IPv4</th>
+                            <th scope="row">主要 IPv4</th>
                             <td>
                               {% if object.primary_ip4 %}
                                 <a href="{{ object.primary_ip4.get_absolute_url }}">{{ object.primary_ip4.address.ip }}</a>
@@ -206,7 +206,7 @@
                             </td>
                         </tr>
                         <tr>
-                            <th scope="row">Primary IPv6</th>
+                            <th scope="row">主要 IPv6</th>
                             <td>
                               {% if object.primary_ip6 %}
                                 <a href="{{ object.primary_ip6.get_absolute_url }}">{{ object.primary_ip6.address.ip }}</a>
@@ -285,7 +285,7 @@
                 </div>
             {% endif %}
             <div class="card">
-              <h5 class="card-header">Services</h5>
+              <h5 class="card-header">服务</h5>
               <div class="card-body htmx-container table-responsive"
                 hx-get="{% url 'ipam:service_list' %}?device_id={{ object.pk }}"
                 hx-trigger="load"
@@ -293,24 +293,24 @@
               {% if perms.ipam.add_service %}
                 <div class="card-footer text-end noprint">
                   <a href="{% url 'ipam:service_add' %}?device={{ object.pk }}" class="btn btn-sm btn-primary">
-                    <span class="mdi mdi-plus-thick" aria-hidden="true"></span> Add a service
+                    <span class="mdi mdi-plus-thick" aria-hidden="true"></span> 添加服务
                   </a>
                 </div>
               {% endif %}
             </div>
             {% include 'inc/panels/image_attachments.html' %}
             <div class="card">
-                <h5 class="card-header">Dimensions</h5>
+                <h5 class="card-header">规模</h5>
                 <div class="card-body table-responsive">
                     <table class="table table-hover attr-table">
                         <tr>
-                            <th scope="row">Height</th>
+                            <th scope="row">高度</th>
                             <td>
                                 {{ object.device_type.u_height }}U
                             </td>
                         </tr>
                         <tr>
-                            <th scope="row">Weight</th>
+                            <th scope="row">宽度</th>
                             <td>
                                 {% if object.total_weight %}
                                     {{ object.total_weight|floatformat }} Kilograms

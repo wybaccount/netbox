@@ -14,23 +14,23 @@
   <div class="row">
     <div class="col col-md-7">
       <div class="card">
-        <h5 class="card-header">Contact</h5>
+        <h5 class="card-header">联系方式</h5>
         <div class="card-body">
           <table class="table table-hover attr-table">
             <tr>
-              <td>Group</td>
+              <td>联系组</td>
               <td>{{ object.group|linkify|placeholder }}</td>
             </tr>
             <tr>
-              <td>Name</td>
+              <td>名称</td>
               <td>{{ object.name }}</td>
             </tr>
             <tr>
-              <td>Title</td>
+              <td>标题</td>
               <td>{{ object.title|placeholder }}</td>
             </tr>
             <tr>
-              <td>Phone</td>
+              <td>电话</td>
               <td>
                 {% if object.phone %}
                   <a href="tel:{{ object.phone }}">{{ object.phone }}</a>
@@ -40,7 +40,7 @@
               </td>
             </tr>
             <tr>
-              <td>Email</td>
+              <td>电子邮件</td>
               <td>
                 {% if object.email %}
                   <a href="mailto:{{ object.email }}">{{ object.email }}</a>
@@ -50,11 +50,11 @@
               </td>
             </tr>
             <tr>
-              <td>Address</td>
+              <td>地址</td>
               <td>{{ object.address|linebreaksbr|placeholder }}</td>
             </tr>
             <tr>
-              <td>Link</td>
+              <td>关联</td>
               <td>
                 {% if object.link %}
                   <a href="{{ object.link }}">{{ object.link }}</a>
@@ -64,7 +64,7 @@
               </td>
             </tr>
             <tr>
-              <th scope="row">Description</th>
+              <th scope="row">描述</th>
               <td>{{ object.description|placeholder }}</td>
             </tr>
           </table>
@@ -82,7 +82,7 @@
   <div class="row mb-3">
     <div class="col col-md-12">
       <div class="card">
-        <h5 class="card-header">Assignments</h5>
+        <h5 class="card-header">分配</h5>
         <div class="card-body htmx-container table-responsive"
           hx-get="{% url 'tenancy:contactassignment_list' %}?contact_id={{ object.pk }}"
           hx-trigger="load"

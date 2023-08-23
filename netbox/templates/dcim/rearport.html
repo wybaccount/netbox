@@ -14,32 +14,32 @@
         <div class="col col-md-6">
             <div class="card">
                 <h5 class="card-header">
-                    Rear Port
+                    背面端口
                 </h5>
                 <div class="card-body">
                     <table class="table table-hover attr-table">
                         <tr>
-                            <th scope="row">Device</th>
+                            <th scope="row">设备</th>
                             <td>{{ object.device|linkify }}</td>
                         </tr>
                         <tr>
-                            <th scope="row">Module</th>
+                            <th scope="row">模块</th>
                             <td>{{ object.module|linkify|placeholder }}</td>
                         </tr>
                         <tr>
-                            <th scope="row">Name</th>
+                            <th scope="row">名称</th>
                             <td>{{ object.name }}</td>
                         </tr>
                         <tr>
-                            <th scope="row">Label</th>
+                            <th scope="row">标签</th>
                             <td>{{ object.label|placeholder }}</td>
                         </tr>
                         <tr>
-                            <th scope="row">Type</th>
+                            <th scope="row">类型</th>
                             <td>{{ object.get_type_display }}</td>
                         </tr>
                         <tr>
-                          <th scope="row">Color</th>
+                          <th scope="row">颜色</th>
                           <td>
                             {% if object.color %}
                               <span class="badge color-label" style="background-color: #{{ object.color }}">&nbsp;</span>
@@ -49,11 +49,11 @@
                           </td>
                         </tr>
                         <tr>
-                            <th scope="row">Positions</th>
+                            <th scope="row">位置</th>
                             <td>{{ object.positions }}</td>
                         </tr>
                         <tr>
-                            <th scope="row">Description</th>
+                            <th scope="row">描述</th>
                             <td>{{ object.description|placeholder }}</td>
                         </tr>
                     </table>
@@ -66,7 +66,7 @@
         <div class="col col-md-6">
             <div class="card">
                 <h5 class="card-header">
-                    Connection
+                    连接
                 </h5>
                 <div class="card-body">
                 {% if object.mark_connected %}
@@ -97,24 +97,24 @@
                     </table>
                 {% else %}
                     <div class="text-muted">
-                        Not connected
+                        未连接
                         {% if perms.dcim.add_cable %}
                             <span class="dropdown float-end">
                                 <button type="button" class="btn btn-primary btn-sm dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <span class="mdi mdi-ethernet-cable" aria-hidden="true"></span> Connect
+                                    <span class="mdi mdi-ethernet-cable" aria-hidden="true"></span> 连接
                                 </button>
                                 <ul class="dropdown-menu dropdown-menu-end">
                                     <li>
-                                        <a href="{% url 'dcim:cable_add' %}?a_terminations_type=dcim.rearport&a_terminations={{ object.pk }}&b_terminations_type=dcim.interface&return_url={{ object.get_absolute_url }}" class="dropdown-item">Interface</a>
+                                        <a href="{% url 'dcim:cable_add' %}?a_terminations_type=dcim.rearport&a_terminations={{ object.pk }}&b_terminations_type=dcim.interface&return_url={{ object.get_absolute_url }}" class="dropdown-item">接口</a>
                                     </li>
                                     <li>
-                                        <a href="{% url 'dcim:cable_add' %}?a_terminations_type=dcim.rearport&a_terminations={{ object.pk }}&b_terminations_type=dcim.frontport&return_url={{ object.get_absolute_url }}" class="dropdown-item">Front Port</a>
+                                        <a href="{% url 'dcim:cable_add' %}?a_terminations_type=dcim.rearport&a_terminations={{ object.pk }}&b_terminations_type=dcim.frontport&return_url={{ object.get_absolute_url }}" class="dropdown-item">前端口</a>
                                     </li>
                                     <li>
-                                        <a href="{% url 'dcim:cable_add' %}?a_terminations_type=dcim.rearport&a_terminations={{ object.pk }}&b_terminations_type=dcim.rearport&return_url={{ object.get_absolute_url }}" class="dropdown-item">Rear Port</a>
+                                        <a href="{% url 'dcim:cable_add' %}?a_terminations_type=dcim.rearport&a_terminations={{ object.pk }}&b_terminations_type=dcim.rearport&return_url={{ object.get_absolute_url }}" class="dropdown-item">背面端口</a>
                                     </li>
                                     <li>
-                                        <a href="{% url 'dcim:cable_add' %}?a_terminations_type=dcim.rearport&a_terminations={{ object.pk }}&b_terminations_type=circuits.circuittermination&return_url={{ object.get_absolute_url }}" class="dropdown-item">Circuit Termination</a>
+                                        <a href="{% url 'dcim:cable_add' %}?a_terminations_type=dcim.rearport&a_terminations={{ object.pk }}&b_terminations_type=circuits.circuittermination&return_url={{ object.get_absolute_url }}" class="dropdown-item">电路终端</a>
                                     </li>
                                 </ul>
                             </span>

@@ -50,7 +50,6 @@ def render_field(field, bulk_nullable=False, label=None):
     """
     Render a single form field from template
     """
-    print(field.label, '--------------')
     flabel = ''
     labelMap = {
         'Description': '描述',
@@ -75,7 +74,7 @@ def render_field(field, bulk_nullable=False, label=None):
         'Comments': '评论',
         'Longitude': '经度',
         'Latitude': '纬度',
-        'Shipping address': '送货地址',
+        'Shipping address': '邮寄地址',
         'Physical address': '物理地址',
         'Parent': '父级',
         'Site': '站点',
@@ -159,7 +158,6 @@ def render_field(field, bulk_nullable=False, label=None):
         'Wireless channel': '无线通道',
         'Channel width (MHz)': '信道宽度(MHz)',
         'Transmit power (dBm)': '发射功率(dBm)',
-        'Virtual Chassis': '虚拟机箱',
         'Virtual Device Context': '虚拟设备上下文',
         'Virtual Device Contexts': '虚拟设备上下文',
         'Mgmt only': '仅管理',
@@ -172,21 +170,19 @@ def render_field(field, bulk_nullable=False, label=None):
         'LAG interface': 'LAG接口',
         'Channel frequency (MHz)': '信道频率(MHz)',
         'Wireless LAN group': '无线局域网组',
-        'Wireless LANs': '无线局域网',
-        'Rear ports': '后端口',
+        'Rear ports': '背面端口',
         'Maximum draw': '最大功耗',
         'Allocated draw': '分配功耗',
-        'Power port': '电源端口',
         'Feed leg': '电源线路',
         'Discovered': '已发现',
         'Console port': '控制台端口',
         'Part ID': '零件ID',
-        'Console server port': '控制台服务端口',
+        'Console server port': '控制台服务器端口',
         'Front port': '前端口',
         'Interface': '接口',
         'Power outlet': '电源插座',
         'Power port': '电源端口',
-        'Rear port': '后端口',
+        'Rear port': '背面端口',
         'Length': '长度',
         'Length unit': '长度单位',
         'Auth cipher': '验证密码',
@@ -254,7 +250,7 @@ def render_field(field, bulk_nullable=False, label=None):
         'Data source': '数据源',
         'Data file': '数据文件',
         'Regions': '地区',
-        'Locations': '位置',
+        'Locations': '地点',
         'Device Types': '设备类型',
         'Site groups': '站点组',
         'Device types': '设备类型',

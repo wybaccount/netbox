@@ -1,12 +1,12 @@
 {% load helpers %}
 
 <div class="card">
-  <h5 class="card-header">Images</h5>
+  <h5 class="card-header">图片</h5>
   {% htmx_table 'extras:imageattachment_list' content_type_id=object|content_type_id object_id=object.pk %}
   {% if perms.extras.add_imageattachment %}
     <div class="card-footer text-end noprint">
       <a href="{% url 'extras:imageattachment_add' %}?content_type={{ object|content_type_id }}&object_id={{ object.pk }}" class="btn btn-primary btn-sm">
-        <i class="mdi mdi-plus-thick" aria-hidden="true"></i> Attach an image
+        <i class="mdi mdi-plus-thick" aria-hidden="true"></i> 上传图片
       </a>
     </div>
   {% endif %}

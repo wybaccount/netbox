@@ -2,28 +2,28 @@
 {% load helpers %}
 {% load static %}
 
-{% block title %}Rack Elevations{% endblock %}
+{% block title %}机架立面图{% endblock %}
 
 {% block controls %}
   <div class="controls">
     <div class="control-group">
       <a href="{% url 'dcim:rack_list' %}{% querystring request %}" class="btn btn-sm btn-primary">
-        <i class="mdi mdi-format-list-checkbox"></i> View List
+        <i class="mdi mdi-format-list-checkbox"></i> 查看列表
       </a>
       <div class="btn-group btn-group-sm" role="group">
         <select class="btn btn-sm btn-outline-secondary rack-view">
-          <option value="images-and-labels" selected="selected">Images and Labels</option>
-          <option value="images-only">Images only</option>
-          <option value="labels-only">Labels only</option>
+          <option value="images-and-labels" selected="selected">图片和标签</option>
+          <option value="images-only">仅图片</option>
+          <option value="labels-only">仅标签</option>
         </select>
       </div>
       <div class="btn-group btn-group-sm" role="group">
-        <a href="{% url 'dcim:rack_elevation_list' %}{% querystring request face='front' %}" class="btn btn-outline-secondary{% if rack_face == 'front' %} active{% endif %}">Front</a>
-        <a href="{% url 'dcim:rack_elevation_list' %}{% querystring request face='rear' %}" class="btn btn-outline-secondary{% if rack_face == 'rear' %} active{% endif %}">Rear</a>
+        <a href="{% url 'dcim:rack_elevation_list' %}{% querystring request face='front' %}" class="btn btn-outline-secondary{% if rack_face == 'front' %} active{% endif %}">正面</a>
+        <a href="{% url 'dcim:rack_elevation_list' %}{% querystring request face='rear' %}" class="btn btn-outline-secondary{% if rack_face == 'rear' %} active{% endif %}">背面</a>
       </div>
       <div class="dropdown">
         <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <i class="mdi mdi-sort"></i>&nbsp;Sort By {{ sort_display_name }}
+          <i class="mdi mdi-sort"></i>&nbsp;按{{ sort_display_name }}排序
         </button>
         <ul class="dropdown-menu dropdown-menu-end">
           {% for sort_key, sort_display_name in sort_choices.items %}

@@ -44,9 +44,9 @@ Context:
 
 {% block subtitle %}
   <div class="object-subtitle">
-    <span>Created {{ object.created|annotated_date }}</span>
-    <span class="separator">&middot;</span>
-    <span>Updated <span title="{{ object.last_updated }}">{{ object.last_updated|timesince }}</span> ago</span>
+    <span>创建于 {{ object.created|annotated_date }}</span>
+    <!-- <span class="separator">&middot;</span>
+    <span>更新于 <span title="{{ object.last_updated }}">{{ object.last_updated|timesince }}</span> 前</span> -->
   </div>
 {% endblock %}
 
@@ -89,7 +89,8 @@ Context:
 {% endblock tabs %}
 
 {% block content-wrapper %}
-  <div class="tab-content">
+<!-- 详情页card -->
+  <div class="tab-content 333">
     {% block content %}{% endblock %}
   </div>
 {% endblock content-wrapper %}

@@ -10,7 +10,7 @@
 {% block extra_controls %}
   {% if perms.dcim.add_device %}
     <a href="{% url 'dcim:device_add' %}?device_role={{ object.pk }}" class="btn btn-sm btn-primary">
-      <span class="mdi mdi-plus-thick" aria-hidden="true"></span> Add Device
+      <span class="mdi mdi-plus-thick" aria-hidden="true"></span> 添加设备
     </a>
   {% endif %}
 {% endblock extra_controls %}
@@ -20,30 +20,30 @@
 	<div class="col col-md-6">
     <div class="card">
       <h5 class="card-header">
-        Device Role
+        设备角色
       </h5>
       <div class="card-body">
         <table class="table table-hover attr-table">
           <tr>
-            <th scope="row">Name</th>
+            <th scope="row">名称</th>
             <td>{{ object.name }}</td>
           </tr>
           <tr>
-            <th scope="row">Description</th>
+            <th scope="row">描述</th>
             <td>{{ object.description|placeholder }}</td>
           </tr>
           <tr>
-            <th scope="row">Color</th>
+            <th scope="row">颜色</th>
             <td>
               <span class="badge color-label" style="background-color: #{{ object.color }}">&nbsp;</span>
             </td>
           </tr>
           <tr>
-            <th scope="row">VM Role</th>
+            <th scope="row">虚拟机角色</th>
             <td>{% checkmark object.vm_role %}</td>
           </tr>
           <tr>
-            <th scope="row">Config Template</th>
+            <th scope="row">配置模板</th>
             <td>{{ object.config_template|linkify|placeholder }}</td>
           </tr>
         </table>

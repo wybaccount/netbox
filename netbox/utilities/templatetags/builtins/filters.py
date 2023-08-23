@@ -62,6 +62,7 @@ def bettertitle(value):
     original case of all others.
     """
     # table 顶部标题
+    print(value, 'value--------------')
     if value in VNP_map():
         return VNP_map()[value]
     else:
@@ -95,9 +96,17 @@ def meta(model, attr):
         model: A Django model class or instance
         attr: The attribute name
     """
-    # 表单新增标题
+    # 表单新增标题 详情页tabs
     if getattr(model._meta, attr, '') == 'rack reservation':
         return '机架预定'
+    elif getattr(model._meta, attr, '') == 'power port':
+        return '电源端口'
+    elif getattr(model._meta, attr, '') == 'console server port':
+        return '控制台服务器端口'
+    elif getattr(model._meta, attr, '') == 'tenant':
+        return '租户'
+    elif getattr(model._meta, attr, '') == 'tenant group':
+        return '租户组'
     elif getattr(model._meta, attr, '') == 'contact group':
         return '联系组'
     elif getattr(model._meta, attr, '') == 'rack role':
@@ -115,7 +124,7 @@ def meta(model, attr):
     elif getattr(model._meta, attr, '') == 'platform':
         return '平台'
     elif getattr(model._meta, attr, '') == 'virtual chassis':
-        return '虚拟机箱'
+        return '虚拟机箱' 
     elif getattr(model._meta, attr, '') == 'virtual device context':
         return '虚拟设备上下文'
     elif getattr(model._meta, attr, '') == 'inventory item role':

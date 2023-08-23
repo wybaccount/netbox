@@ -34,7 +34,7 @@
     {% if page %}
       <div class="dropdown dropup">
         <button class="btn btn-sm btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
-          Per Page
+          每页
         </button>
         <ul class="dropdown-menu">
           {% for n in page.paginator.get_page_lengths %}
@@ -45,7 +45,7 @@
         </ul>
       </div>
       <small class="text-end text-muted">
-        Showing {{ page.start_index }}-{{ page.end_index }} of {{ page.paginator.count }}
+        显示第 {{ page.start_index }}-{{ page.end_index }} 条， 共 {{ page.paginator.count }} 条
       </small>
     {% endif %}
   </div>

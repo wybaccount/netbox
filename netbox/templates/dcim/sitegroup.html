@@ -13,7 +13,7 @@
 {% block extra_controls %}
   {% if perms.dcim.add_site %}
     <a href="{% url 'dcim:site_add' %}?group={{ object.pk }}" class="btn btn-sm btn-primary">
-      <span class="mdi mdi-plus-thick" aria-hidden="true"></span> Add Site
+      <span class="mdi mdi-plus-thick" aria-hidden="true"></span> 添加站点
     </a>
   {% endif %}
 {% endblock extra_controls %}
@@ -22,19 +22,19 @@
 <div class="row mb-3">
 	<div class="col col-md-6">
     <div class="card">
-      <h5 class="card-header">Site Group</h5>
+      <h5 class="card-header">站点组</h5>
       <div class="card-body">
         <table class="table table-hover attr-table">
           <tr>
-            <th scope="row">Name</th>
+            <th scope="row">名称</th>
             <td>{{ object.name }}</td>
           </tr>
           <tr>
-            <th scope="row">Description</th>
+            <th scope="row">描述</th>
             <td>{{ object.description|placeholder }}</td>
           </tr>
           <tr>
-            <th scope="row">Parent</th>
+            <th scope="row">父级</th>
             <td>{{ object.parent|linkify|placeholder }}</td>
           </tr>
         </table>
@@ -52,7 +52,7 @@
 <div class="row mb-3">
 	<div class="col col-md-12">
     <div class="card">
-      <h5 class="card-header">Child Groups</h5>
+      <h5 class="card-header">子组</h5>
       <div class="card-body htmx-container table-responsive"
         hx-get="{% url 'dcim:sitegroup_list' %}?parent_id={{ object.pk }}"
         hx-trigger="load"
@@ -60,7 +60,7 @@
       {% if perms.dcim.add_sitegroup %}
         <div class="card-footer text-end noprint">
           <a href="{% url 'dcim:sitegroup_add' %}?parent={{ object.pk }}" class="btn btn-sm btn-primary">
-            <span class="mdi mdi-plus-thick" aria-hidden="true"></span> Add Site Group
+            <span class="mdi mdi-plus-thick" aria-hidden="true"></span> 添加站点组
           </a>
         </div>
       {% endif %}

@@ -14,40 +14,40 @@
         <div class="col col-md-6">
             <div class="card">
                 <h5 class="card-header">
-                    Power Port
+                    电源端口
                 </h5>
                 <div class="card-body">
                     <table class="table table-hover attr-table">
                         <tr>
-                            <th scope="row">Device</th>
+                            <th scope="row">设备</th>
                             <td>{{ object.device|linkify }}</td>
                         </tr>
                         <tr>
-                            <th scope="row">Module</th>
+                            <th scope="row">模块</th>
                             <td>{{ object.module|linkify|placeholder }}</td>
                         </tr>
                         <tr>
-                            <th scope="row">Name</th>
+                            <th scope="row">名称</th>
                             <td>{{ object.name }}</td>
                         </tr>
                         <tr>
-                            <th scope="row">Label</th>
+                            <th scope="row">标签</th>
                             <td>{{ object.label|placeholder }}</td>
                         </tr>
                         <tr>
-                            <th scope="row">Type</th>
+                            <th scope="row">类型</th>
                             <td>{{ object.get_type_display|placeholder }}</td>
                         </tr>
                         <tr>
-                            <th scope="row">Description</th>
+                            <th scope="row">描述</th>
                             <td>{{ object.description|placeholder }}</td>
                         </tr>
                         <tr>
-                            <th scope="row">Maximum Draw</th>
+                            <th scope="row">最大功耗</th>
                             <td>{{ object.maximum_draw|placeholder }}</td>
                         </tr>
                         <tr>
-                            <th scope="row">Allocated Draw</th>
+                            <th scope="row">分配功耗</th>
                             <td>{{ object.allocated_draw|placeholder }}</td>
                         </tr>
                     </table>
@@ -59,28 +59,28 @@
         </div>
         <div class="col col-md-6">
           <div class="card">
-            <h5 class="card-header">Connection</h5>
+            <h5 class="card-header">连接</h5>
             <div class="card-body">
               {% if object.mark_connected %}
                 <div class="text-muted">
-                  <span class="text-success"><i class="mdi mdi-check-bold"></i></span> Marked as Connected
+                  <span class="text-success"><i class="mdi mdi-check-bold"></i></span> 标记为已连接
                 </div>
               {% elif object.cable %}
                 {% include 'dcim/inc/connection_endpoints.html' with trace_url='dcim:powerport_trace' %}
               {% else %}
                 <div class="text-muted">
-                  Not Connected
+                  未连接
                   {% if perms.dcim.add_cable %}
                     <span class="dropdown float-end">
                       <button type="button" class="btn btn-primary btn-sm dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <span class="mdi mdi-ethernet-cable" aria-hidden="true"></span> Connect
+                        <span class="mdi mdi-ethernet-cable" aria-hidden="true"></span> 连接
                       </button>
                       <ul class="dropdown-menu dropdown-menu-end">
                         <li>
-                          <a href="{% url 'dcim:cable_add' %}?a_terminations_type=dcim.powerport&a_terminations={{ object.pk }}&b_terminations_type=dcim.poweroutlet&return_url={{ object.get_absolute_url }}" class="dropdown-item">Power Outlet</a>
+                          <a href="{% url 'dcim:cable_add' %}?a_terminations_type=dcim.powerport&a_terminations={{ object.pk }}&b_terminations_type=dcim.poweroutlet&return_url={{ object.get_absolute_url }}" class="dropdown-item">电源插座</a>
                         </li>
                         <li>
-                          <a href="{% url 'dcim:cable_add' %}?a_terminations_type=dcim.powerport&a_terminations={{ object.pk }}&b_terminations_type=dcim.powerfeed&return_url={{ object.get_absolute_url }}" class="dropdown-item">Power Feed</a>
+                          <a href="{% url 'dcim:cable_add' %}?a_terminations_type=dcim.powerport&a_terminations={{ object.pk }}&b_terminations_type=dcim.powerfeed&return_url={{ object.get_absolute_url }}" class="dropdown-item">供电</a>
                         </li>
                       </ul>
                     </span>

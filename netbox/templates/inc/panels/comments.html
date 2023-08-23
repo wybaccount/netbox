@@ -2,13 +2,13 @@
 
 <div class="card">
   <h5 class="card-header">
-    Comments
+    评论
   </h5>
   <div class="card-body">
     {% if object.comments %}
       {{ object.comments|markdown }}
     {% else %}
-      <span class="text-muted">None</span>
+      <span class="text-muted">无</span>
     {% endif %}
   </div>
 </div>

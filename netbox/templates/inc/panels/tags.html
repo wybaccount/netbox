@@ -1,13 +1,13 @@
 {% load helpers %}
 
 <div class="card">
-  <h5 class="card-header">Tags</h5>
+  <h5 class="card-header">标签</h5>
   <div class="card-body">
     {% with url=object|validated_viewname:"list" %}
       {% for tag in object.tags.all %}
         {% tag tag url %}
       {% empty %}
-        <span class="text-muted">No tags assigned</span>
+        <span class="text-muted">没有分配标签</span>
       {% endfor %}
     {% endwith %}
   </div>

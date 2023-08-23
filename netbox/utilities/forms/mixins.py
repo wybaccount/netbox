@@ -45,8 +45,26 @@ class BootstrapMixin:
             if field.required and not isinstance(field.widget, forms.FileInput):
                 field.widget.attrs['required'] = 'required'
 
+            # 表单placeholder
             if 'placeholder' not in field.widget.attrs and field.label is not None:
-                field.widget.attrs['placeholder'] = field.label
+                fLabel = ''
+                labelMap = {
+                    'Search': '搜索',
+                    'Name': '名称',
+                    'Status': '状态',
+                    'Facility': '设施',
+                    'Description': '描述',
+                    'Physical address': '物理地址',
+                    'Shipping address': '邮寄地址',
+                    'Latitude': '纬度',
+                    'Longitude': '经度'
+                }
+                if field.label in labelMap:
+                    fLabel = labelMap[field.label]
+                else:
+                    fLabel = field.label
+
+                field.widget.attrs['placeholder'] = fLabel
 
     def is_valid(self):
         is_valid = super().is_valid()

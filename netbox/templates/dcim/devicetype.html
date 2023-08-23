@@ -8,43 +8,43 @@
         <div class="col col-md-6">
             <div class="card">
                 <h5 class="card-header">
-                    Chassis
+                    机箱
                 </h5>
                 <div class="card-body">
                     <table class="table table-hover attr-table">
                         <tr>
-                            <td>Manufacturer</td>
+                            <td>制造商</td>
                             <td>{{ object.manufacturer|linkify }}</td>
                         </tr>
                         <tr>
-                            <td>Model Name</td>
+                            <td>型号名称</td>
                             <td>
                                 {{ object.model }}<br/>
                                 <small class="text-muted">{{ object.slug }}</small>
                             </td>
                         </tr>
                         <tr>
-                            <td>Part Number</td>
+                            <td>零件号</td>
                             <td>{{ object.part_number|placeholder }}</td>
                         </tr>
                         <tr>
-                            <td>Default Platform</td>
+                            <td>默认平台</td>
                             <td>{{ object.default_platform|linkify }}</td>
                         </tr>
                         <tr>
-                            <td>Description</td>
+                            <td>描述</td>
                             <td>{{ object.description|placeholder }}</td>
                         </tr>
                         <tr>
-                            <td>Height (U)</td>
+                            <td>高度 (U)</td>
                             <td>{{ object.u_height|floatformat }}</td>
                         </tr>
                         <tr>
-                            <td>Full Depth</td>
+                            <td>全深度</td>
                             <td>{% checkmark object.is_full_depth %}</td>
                         </tr>
                         <tr>
-                            <td>Weight</td>
+                            <td>重量</td>
                             <td>
                             {% if object.weight %}
                               {{ object.weight|floatformat }} {{ object.get_weight_unit_display }}
@@ -54,19 +54,19 @@
                             </td>
                         </tr>
                         <tr>
-                            <td>Parent/Child</td>
+                            <td>父级/子级</td>
                             <td>
                                 {{ object.get_subdevice_role_display|placeholder }}
                             </td>
                         </tr>
                         <tr>
-                            <td>Airflow</td>
+                            <td>空气流动</td>
                             <td>
                                 {{ object.get_airflow_display|placeholder }}
                             </td>
                         </tr>
                         <tr>
-                            <td>Front Image</td>
+                            <td>正面图像</td>
                             <td>
                                 {% if object.front_image %}
                                     <a href="{{ object.front_image.url }}">
@@ -78,7 +78,7 @@
                             </td>
                         </tr>
                         <tr>
-                            <td>Rear Image</td>
+                            <td>背面图像</td>
                             <td>
                                 {% if object.rear_image %}
                                     <a href="{{ object.rear_image.url }}">
