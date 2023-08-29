@@ -28,14 +28,42 @@
             {% elif heading == 'User' %}
             <h6>用户</h6>
             {% elif heading == 'Rack' %}
-            <h6>机架</h6>
+            <h6>机柜</h6>
             {% elif heading == 'Assignment' %}
             <h6>分配</h6>
             {% elif heading == 'Operation' %}
             <h6>操作</h6>
             {% elif heading == 'Components' %}
             <h6>组件</h6>
-            {% else %}
+            {% elif heading == 'Images' %}
+            <h6>图片</h6>
+            {% elif heading == 'Authentication' %}
+            <h6>认证</h6>
+            {% elif heading == 'Wireless' %}
+            <h6>无线</h6>
+            {% elif heading == 'Addressing' %}
+            <h6>寻址</h6>
+            {% elif heading == 'Device' %}
+            <h6>设备</h6>
+            {% elif heading == 'Connection' %}
+            <h6>连接</h6>
+            {% elif heading == 'Device/VM' %}
+            <h6>设备/虚拟机</h6>
+            {% elif heading == 'Attriubtes' %}
+            <h6>属性</h6>
+            {% elif heading == 'Range' %}
+            <h6>范围</h6>
+            {% elif heading == 'Route Targets' %}
+            <h6>路由目标</h6>
+            {% elif heading == 'Assigned Object' %}
+            <h6>分配对象</h6>
+            {% elif heading == 'Provider' %}
+            <h6>供应商</h6>
+            {% elif heading == 'Data' %}
+            <h6>数据</h6>
+            {% elif heading == 'Cluster' %}
+            <h6>集群</h6>
+            {% else %} 
             <h6>{{ heading }}</h6>
             {% endif %}
           {% endif %}

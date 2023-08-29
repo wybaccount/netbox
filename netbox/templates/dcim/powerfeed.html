@@ -18,32 +18,32 @@
 	<div class="col col-md-6">
         <div class="card">
             <h5 class="card-header">
-                Power Feed
+                电源馈线
             </h5>
             <div class="card-body">
                 <table class="table table-hover attr-table">
                     <tr>
-                        <th scope="row">Power Panel</th>
+                        <th scope="row">电源面板</th>
                         <td>{{ object.power_panel|linkify }}</td>
                     </tr>
                     <tr>
-                        <th scope="row">Rack</th>
+                        <th scope="row">机柜</th>
                         <td>{{ object.rack|linkify|placeholder }}</td>
                     </tr>
                     <tr>
-                        <th scope="row">Type</th>
+                        <th scope="row">类型</th>
                         <td>{% badge object.get_type_display bg_color=object.get_type_color %}</td>
                     </tr>
                     <tr>
-                        <th scope="row">Status</th>
+                        <th scope="row">状态</th>
                         <td>{% badge object.get_status_display bg_color=object.get_status_color %}</td>
                     </tr>
                     <tr>
-                        <th scope="row">Description</th>
+                        <th scope="row">描述</th>
                         <td>{{ object.description|placeholder }}</td>
                     </tr>
                     <tr>
-                        <th scope="row">Connected Device</th>
+                        <th scope="row">连接设备</th>
                         <td>
                             {% if object.connected_endpoints %}
                                 {{ object.connected_endpoints.0.device|linkify }} ({{ object.connected_endpoints.0|linkify:"name" }})
@@ -53,7 +53,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <th scope="row">Utilization (Allocated)</th>
+                        <th scope="row">利用率 (已分配)</th>
                         {% with utilization=object.connected_endpoints.0.get_power_draw %}
                             {% if utilization %}
                                 <td>
@@ -72,28 +72,28 @@
         </div>
         <div class="card">
             <h5 class="card-header">
-                Electrical Characteristics
+                电气特性
             </h5>
             <div class="card-body">
                 <table class="table table-hover attr-table">
                     <tr>
-                        <th scope="row">Supply</th>
+                        <th scope="row">供应</th>
                         <td>{{ object.get_supply_display }}</td>
                     </tr>
                     <tr>
-                        <th scope="row">Voltage</th>
+                        <th scope="row">电压</th>
                         <td>{{ object.voltage }}V</td>
                     </tr>
                     <tr>
-                        <th scope="row">Amperage</th>
+                        <th scope="row">安培书</th>
                         <td>{{ object.amperage }}A</td>
                     </tr>
                     <tr>
-                        <th scope="row">Phase</th>
+                        <th scope="row">相位</th>
                         <td>{{ object.get_phase_display }}</td>
                     </tr>
                     <tr>
-                        <th scope="row">Max Utilization</th>
+                        <th scope="row">最大利用率</th>
                         <td>{{ object.max_utilization }}%</td>
                     </tr>
                 </table>
@@ -105,17 +105,17 @@
     </div>
     <div class="col col-md-6">
       <div class="card">
-        <h5 class="card-header">Connection</h5>
+        <h5 class="card-header">连接</h5>
         <div class="card-body">
           {% if object.mark_connected %}
             <div class="text-muted">
-              <span class="text-success"><i class="mdi mdi-check-bold"></i></span> Marked as connected
+              <span class="text-success"><i class="mdi mdi-check-bold"></i></span> 标记为已连接
             </div>
           {% elif object.cable %}
             {% include 'dcim/inc/connection_endpoints.html' with trace_url='dcim:powerfeed_trace' %}
           {% else %}
             <div class="text-muted">
-              Not connected
+              未连接
             </div>
           {% endif %}
         </div>

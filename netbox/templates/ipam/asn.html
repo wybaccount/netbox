@@ -20,7 +20,7 @@
         <div class="card-body">
           <table class="table table-hover attr-table">
             <tr>
-              <td>AS Number</td>
+              <td>AS 号</td>
               <td>{{ object.asn_with_asdot }}</td>
             </tr>
             <tr>
@@ -30,7 +30,7 @@
               </td>
             </tr>
             <tr>
-              <td>Tenant</td>
+              <td>租户</td>
               <td>
                 {% if object.tenant.group %}
                   {{ object.tenant.group|linkify }} /
@@ -39,7 +39,7 @@
               </td>
             </tr>
             <tr>
-              <td>Description</td>
+              <td>描述</td>
               <td>{{ object.description|placeholder }}</td>
             </tr>
           </table>

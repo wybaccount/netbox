@@ -98,7 +98,7 @@ def meta(model, attr):
     """
     # 表单新增标题 详情页tabs
     if getattr(model._meta, attr, '') == 'rack reservation':
-        return '机架预定'
+        return '机柜预定'
     elif getattr(model._meta, attr, '') == 'power port':
         return '电源端口'
     elif getattr(model._meta, attr, '') == 'console server port':
@@ -110,7 +110,7 @@ def meta(model, attr):
     elif getattr(model._meta, attr, '') == 'contact group':
         return '联系组'
     elif getattr(model._meta, attr, '') == 'rack role':
-        return '机架角色'
+        return '机柜角色'
     elif getattr(model._meta, attr, '') == 'site':
         return '站点'
     elif getattr(model._meta, attr, '') == 'region':
@@ -132,13 +132,13 @@ def meta(model, attr):
     elif getattr(model._meta, attr, '') == 'IP address':
         return 'IP地址'
     elif getattr(model._meta, attr, '') == 'IP range':
-        return 'Ip范围'
+        return 'IP范围'
     elif getattr(model._meta, attr, '') == 'prefix':
         return '前缀'
     elif getattr(model._meta, attr, '') == 'role':
         return '角色'
     elif getattr(model._meta, attr, '') == 'rack':
-        return '机架'
+        return '机柜'
     elif getattr(model._meta, attr, '') == 'device':
         return '设备'
     elif getattr(model._meta, attr, '') == 'device role':
@@ -179,6 +179,8 @@ def meta(model, attr):
         return '配置模板'
     elif getattr(model._meta, attr, '') == 'wireless link':
         return '无线连接'
+    elif getattr(model._meta, attr, '') == 'circuit termination':
+        return '电路终端'
     else:
         return getattr(model._meta, attr, '')
 

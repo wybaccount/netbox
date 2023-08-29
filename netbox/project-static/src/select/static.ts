@@ -8,7 +8,7 @@ export function initStaticSelect(): void {
 
       let placeholder;
       if (label !== null) {
-        placeholder = `Select ${label.innerText.trim()}`;
+        placeholder = `选择${label.innerText.trim()}`;
       }
 
       const instance = new SlimSelect({

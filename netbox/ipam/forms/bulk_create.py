@@ -11,5 +11,6 @@ __all__ = (
 
 class IPAddressBulkCreateForm(BootstrapMixin, forms.Form):
     pattern = ExpandableIPAddressField(
-        label=_('Address pattern')
+        label=_('地址模式')
+        # label=_('Address pattern')
     )

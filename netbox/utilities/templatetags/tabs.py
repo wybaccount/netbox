@@ -37,7 +37,13 @@ def model_view_tabs(context, instance):
         'Interfaces': '接口',
         'Rear Ports': '背面端口',
         'Console Ports': '控制台端口',
-        'Console Server Ports': '控制台服务器端口'
+        'Console Server Ports': '控制台服务器端口',
+        'IP Addresses': 'IP地址',
+        'Child Prefixes': '子前缀',
+        'Child Ranges': '子范围',
+        'Prefixes': '前缀',
+        'Device Interfaces': '设备接口',
+        'VM Interfaces': 'VM接口'
     }
 
     # Retrieve registered views for this model

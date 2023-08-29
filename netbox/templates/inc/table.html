@@ -15,12 +15,30 @@
               种类
               {% elif column.header == 'Comments' %}
               评论
+              {% elif column.header == 'Name' %}
+              名称	
+              {% elif column.header == 'Site' %}
+              站点
+              {% elif column.header == 'Tenant' %}
+              租户
+              {% elif column.header == 'Status' %}
+              状态
+              {% elif column.header == 'Role' %}
+              角色
+              {% elif column.header == 'Description' %}
+              描述
               {% else %}
               {{ column.header }}
               {% endif %}
             </a></th>
           {% else %}
-            <th {{ column.attrs.th.as_html }}>{{ column.header }}</th>
+            <th {{ column.attrs.th.as_html }}>
+              {% if column.header == 'Prefixes' %}
+              前缀
+              {% else %}
+              {{ column.header }}
+              {% endif %}
+            </th>
           {% endif %}
         {% endfor %}
       </tr>

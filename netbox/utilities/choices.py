@@ -222,7 +222,7 @@ class ImportFormatChoices(ChoiceSet):
     YAML = 'yaml'
 
     CHOICES = [
-        (AUTO, 'Auto-detect'),
+        (AUTO, '自动检测'),
         (CSV, 'CSV'),
         (JSON, 'JSON'),
         (YAML, 'YAML'),

@@ -21,10 +21,10 @@ ORGANIZATION_MENU = Menu(
             ),
         ),
         MenuGroup(
-            label=_('机架'),
+            label=_('机柜'),
             items=(
-                get_model_item('dcim', 'rack', _('机架')),
-                get_model_item('dcim', 'rackrole', _('机架角色')),
+                get_model_item('dcim', 'rack', _('机柜')),
+                get_model_item('dcim', 'rackrole', _('机柜角色')),
                 get_model_item('dcim', 'rackreservation', _('预订')),
                 MenuItem(
                     link='dcim:rack_elevation_list',
@@ -180,7 +180,7 @@ IPAM_MENU = Menu(
             label=_('VLANS'),
             items=(
                 get_model_item('ipam', 'vlan', _('VLANs')),
-                get_model_item('ipam', 'vlangroup', _('VLAN Groups')),
+                get_model_item('ipam', 'vlangroup', _('VLAN组')),
             ),
         ),
         MenuGroup(
@@ -261,7 +261,7 @@ POWER_MENU = Menu(
         MenuGroup(
             label=_('电源'),
             items=(
-                get_model_item('dcim', 'powerfeed', _('电源供应线路')),
+                get_model_item('dcim', 'powerfeed', _('电源馈线')),
                 get_model_item('dcim', 'powerpanel', _('电源面板')),
             ),
         ),

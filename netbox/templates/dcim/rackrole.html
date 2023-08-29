@@ -6,7 +6,7 @@
 {% block extra_controls %}
   {% if perms.dcim.add_rack %}
     <a href="{% url 'dcim:rack_add' %}?role={{ object.pk }}" class="btn btn-sm btn-primary">
-      <span class="mdi mdi-plus-thick" aria-hidden="true"></span> 添加机架
+      <span class="mdi mdi-plus-thick" aria-hidden="true"></span> 添加机柜
     </a>
   {% endif %}
 {% endblock extra_controls %}
@@ -16,7 +16,7 @@
 	<div class="col col-md-6">
     <div class="card">
       <h5 class="card-header">
-        机架角色
+        机柜角色
       </h5>
       <div class="card-body">
         <table class="table table-hover attr-table">

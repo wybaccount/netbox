@@ -14,7 +14,7 @@
 {% block extra_controls %}
   {% if perms.ipam.add_vlan %}
     <a href="{% url 'ipam:vlan_add' %}?group={{ object.pk }}" class="btn btn-sm btn-primary">
-      <span class="mdi mdi-plus-thick" aria-hidden="true"></span> Add VLAN
+      <span class="mdi mdi-plus-thick" aria-hidden="true"></span> 添加 VLAN
     </a>
   {% endif %}
 {% endblock %}
@@ -23,23 +23,23 @@
 <div class="row mb-3">
 	<div class="col col-md-6">
     <div class="card">
-      <h5 class="card-header">VLAN Group</h5>
+      <h5 class="card-header">VLAN 组</h5>
       <div class="card-body">
         <table class="table table-hover attr-table">
           <tr>
-            <th scope="row">Name</th>
+            <th scope="row">名称</th>
             <td>{{ object.name }}</td>
           </tr>
           <tr>
-            <th scope="row">Description</th>
+            <th scope="row">描述</th>
             <td>{{ object.description|placeholder }}</td>
           </tr>
           <tr>
-            <th scope="row">Scope</th>
+            <th scope="row">范围</th>
             <td>{{ object.scope|linkify|placeholder }}</td>
           </tr>
           <tr>
-            <th scope="row">Permitted VIDs</th>
+            <th scope="row">允许的 VID</th>
             <td>{{ object.min_vid }} - {{ object.max_vid }}</td>
           </tr>
         </table>

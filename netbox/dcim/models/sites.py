@@ -140,7 +140,8 @@ class Site(PrimaryModel):
     name = models.CharField(
         max_length=100,
         unique=True,
-        help_text=_("Full name of the site")
+        help_text=_("网站全名")
+        # help_text=_("Full name of the site")
     )
     _name = NaturalOrderingField(
         target_field='name',
@@ -180,7 +181,8 @@ class Site(PrimaryModel):
     facility = models.CharField(
         max_length=50,
         blank=True,
-        help_text=_("Local facility ID or description")
+        help_text=_("本地设备ID或描述")
+        # help_text=_("Local facility ID or description")
     )
     asns = models.ManyToManyField(
         to='ipam.ASN',
@@ -193,26 +195,29 @@ class Site(PrimaryModel):
     physical_address = models.CharField(
         max_length=200,
         blank=True,
-        help_text=_("Physical location of the building")
+        help_text=_("建筑物在地理上的实际位置")
+        # help_text=_("Physical location of the building")
     )
     shipping_address = models.CharField(
         max_length=200,
         blank=True,
-        help_text=_("If different from the physical address")
+        help_text=_("与实际位置不同")
+        # help_text=_("If different from the physical address")
     )
     latitude = models.DecimalField(
         max_digits=8,
         decimal_places=6,
         blank=True,
         null=True,
-        help_text=_("GPS coordinate in decimal format (xx.yyyyyy)")
+        help_text=_("十进制格式的GPS坐标 (xx.yyyyyy)")
+        # help_text=_("GPS coordinate in decimal format (xx.yyyyyy)")
     )
     longitude = models.DecimalField(
         max_digits=9,
         decimal_places=6,
         blank=True,
         null=True,
-        help_text=_("GPS coordinate in decimal format (xx.yyyyyy)")
+        help_text=_("十进制格式的GPS坐标 (xx.yyyyyy)")
     )
 
     # Generic relations

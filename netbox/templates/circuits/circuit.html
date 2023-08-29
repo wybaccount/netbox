@@ -11,31 +11,31 @@
   <div class="row">
     <div class="col col-md-6">
       <div class="card">
-        <h5 class="card-header">Circuit</h5>
+        <h5 class="card-header">电路</h5>
         <div class="card-body">
           <table class="table table-hover attr-table">
             <tr>
-              <th scope="row">Provider</th>
+              <th scope="row">供应商</th>
               <td>{{ object.provider|linkify }}</td>
             </tr>
             <tr>
-              <th scope="row">Account</th>
+              <th scope="row">账户</th>
               <td>{{ object.provider_account|linkify|placeholder }}</td>
             </tr>
             <tr>
-              <th scope="row">Circuit ID</th>
+              <th scope="row">电路ID</th>
               <td>{{ object.cid }}</td>
             </tr>
             <tr>
-              <th scope="row">Type</th>
+              <th scope="row">类型</th>
               <td>{{ object.type|linkify }}</td>
             </tr>
             <tr>
-              <th scope="row">Status</th>
+              <th scope="row">状态</th>
               <td>{% badge object.get_status_display bg_color=object.get_status_color %}</td>
             </tr>
             <tr>
-              <th scope="row">Tenant</th>
+              <th scope="row">租户</th>
               <td>
                 {% if object.tenant.group %}
                   {{ object.tenant.group|linkify }} /
@@ -44,19 +44,19 @@
               </td>
             </tr>
             <tr>
-              <th scope="row">Install Date</th>
+              <th scope="row">安装日期</th>
               <td>{{ object.install_date|annotated_date|placeholder }}</td>
             </tr>
             <tr>
-              <th scope="row">Termination Date</th>
+              <th scope="row">终止日期</th>
               <td>{{ object.termination_date|annotated_date|placeholder }}</td>
             </tr>
             <tr>
-              <th scope="row">Commit Rate</th>
+              <th scope="row">提交率</th>
               <td>{{ object.commit_rate|humanize_speed|placeholder }}</td>
             </tr>
             <tr>
-              <th scope="row">Description</th>
+              <th scope="row">描述</th>
               <td>{{ object.description|placeholder }}</td>
             </tr>
           </table>

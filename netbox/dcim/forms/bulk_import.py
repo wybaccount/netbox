@@ -83,25 +83,28 @@ class SiteGroupImportForm(NetBoxModelImportForm):
 class SiteImportForm(NetBoxModelImportForm):
     status = CSVChoiceField(
         choices=SiteStatusChoices,
-        help_text=_('Operational status')
+        help_text=_('运行状态')
     )
     region = CSVModelChoiceField(
         queryset=Region.objects.all(),
         required=False,
         to_field_name='name',
-        help_text=_('Assigned region')
+        help_text=_('指定区域')
+        # help_text=_('Assigned region')
     )
     group = CSVModelChoiceField(
         queryset=SiteGroup.objects.all(),
         required=False,
         to_field_name='name',
-        help_text=_('Assigned group')
+        help_text=_('指定组')
+        # help_text=_('Assigned group')
     )
     tenant = CSVModelChoiceField(
         queryset=Tenant.objects.all(),
         required=False,
         to_field_name='name',
-        help_text=_('Assigned tenant')
+        help_text=_('指定租户')
+        # help_text=_('Assigned tenant')
     )
 
     class Meta:
@@ -112,7 +115,8 @@ class SiteImportForm(NetBoxModelImportForm):
         )
         help_texts = {
             'time_zone': mark_safe(
-                _('Time zone (<a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones">available options</a>)')
+                # _('Time zone (<a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones">available options</a>)')
+                _('时区')
             )
         }
 

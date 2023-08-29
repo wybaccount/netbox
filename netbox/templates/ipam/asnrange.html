@@ -8,11 +8,11 @@
   <div class="row">
     <div class="col col-md-6">
       <div class="card">
-        <h5 class="card-header">ASN Range</h5>
+        <h5 class="card-header">ASN 范围</h5>
         <div class="card-body">
           <table class="table table-hover attr-table">
             <tr>
-              <td>Name</td>
+              <td>名称</td>
               <td>{{ object.name }}</td>
             </tr>
             <tr>
@@ -22,11 +22,11 @@
               </td>
             </tr>
             <tr>
-              <td>Range</td>
+              <td>范围</td>
               <td>{{ object.range_as_string }}</td>
             </tr>
             <tr>
-              <td>Tenant</td>
+              <td>租户</td>
               <td>
                 {% if object.tenant.group %}
                   {{ object.tenant.group|linkify }} /
@@ -35,7 +35,7 @@
               </td>
             </tr>
             <tr>
-              <td>Description</td>
+              <td>描述</td>
               <td>{{ object.description|placeholder }}</td>
             </tr>
           </table>

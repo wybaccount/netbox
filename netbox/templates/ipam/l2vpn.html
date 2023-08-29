@@ -7,27 +7,27 @@
 <div class="row mb-3">
 	<div class="col col-md-6">
     <div class="card">
-      <h5 class="card-header">L2VPN Attributes</h5>
+      <h5 class="card-header">L2VPN 属性</h5>
       <div class="card-body">
         <table class="table table-hover attr-table">
           <tr>
-            <th scope="row">Name</th>
+            <th scope="row">名称</th>
             <td>{{ object.name|placeholder }}</td>
           </tr>
           <tr>
-            <th scope="row">Identifier</th>
+            <th scope="row">标识符</th>
             <td>{{ object.identifier|placeholder }}</td>
           </tr>
           <tr>
-            <th scope="row">Type</th>
+            <th scope="row">类型</th>
             <td>{{ object.get_type_display }}</td>
           </tr>
           <tr>
-            <th scope="row">Description</th>
+            <th scope="row">描述</th>
             <td>{{ object.description|placeholder }}</td>
           </tr>
           <tr>
-            <th scope="row">Tenant</th>
+            <th scope="row">租户</th>
             <td>{{ object.tenant|linkify|placeholder }}</td>
           </tr>
         </table>
@@ -44,16 +44,16 @@
 </div>
 <div class="row mb-3">
 	<div class="col col-md-6">
-    {% include 'inc/panel_table.html' with table=import_targets_table heading="Import Route Targets" %}
+    {% include 'inc/panel_table.html' with table=import_targets_table heading="导入路由目标" %}
   </div>
 	<div class="col col-md-6">
-    {% include 'inc/panel_table.html' with table=export_targets_table heading="Export Route Targets" %}
+    {% include 'inc/panel_table.html' with table=export_targets_table heading="导出路由目标" %}
   </div>
 </div>
 <div class="row mb-3">
 	<div class="col col-md-12">
     <div class="card">
-      <h5 class="card-header">Terminations</h5>
+      <h5 class="card-header">终结点</h5>
       <div class="card-body htmx-container table-responsive"
         hx-get="{% url 'ipam:l2vpntermination_list' %}?l2vpn_id={{ object.pk }}"
         hx-trigger="load"
@@ -61,7 +61,7 @@
       {% if perms.ipam.add_l2vpntermination %}
         <div class="card-footer text-end noprint">
           <a href="{% url 'ipam:l2vpntermination_add' %}?l2vpn={{ object.pk }}&return_url={{ object.get_absolute_url }}" class="btn btn-primary btn-sm{% if not object.can_add_termination %} disabled" aria-disabled="true{% endif %}">
-            <i class="mdi mdi-plus-thick" aria-hidden="true"></i> Add a Termination
+            <i class="mdi mdi-plus-thick" aria-hidden="true"></i> 添加终结点
           </a>
         </div>
       {% endif %}

@@ -13,7 +13,7 @@
                 <div class="card-body">
                     <table class="table table-hover attr-table">
                         <tr>
-                            <th scope="row">Site</th>
+                            <th scope="row">站点</th>
                             <td>
                                 {% if object.site %}
                                     {% if object.site.region %}
@@ -26,7 +26,7 @@
                             </td>
                         </tr>
                         <tr>
-                            <th scope="row">Group</th>
+                            <th scope="row">组</th>
                             <td>{{ object.group|linkify|placeholder }}</td>
                         </tr>
                         <tr>
@@ -34,11 +34,11 @@
                             <td>{{ object.vid }}</td>
                         </tr>
                         <tr>
-                            <th scope="row">Name</th>
+                            <th scope="row">名称</th>
                             <td>{{ object.name }}</td>
                         </tr>
                         <tr>
-                            <th scope="row">Tenant</th>
+                            <th scope="row">租户</th>
                             <td>
                                 {% if object.tenant.group %}
                                     {{ object.tenant.group|linkify }} /
@@ -47,11 +47,11 @@
                             </td>
                         </tr>
                         <tr>
-                            <th scope="row">Status</th>
+                            <th scope="row">状态</th>
                             <td>{% badge object.get_status_display bg_color=object.get_status_color %}</td>
                         </tr>
                         <tr>
-                            <th scope="row">Role</th>
+                            <th scope="row">角色</th>
                             <td>
                                 {% if object.role %}
                                     <a href="{% url 'ipam:vlan_list' %}?role={{ object.role.slug }}">{{ object.role }}</a>
@@ -61,7 +61,7 @@
                             </td>
                         </tr>
                         <tr>
-                            <th scope="row">Description</th>
+                            <th scope="row">描述</th>
                             <td>{{ object.description|placeholder }}</td>
                         </tr>
                         <tr>
@@ -83,7 +83,7 @@
     <div class="row">
       <div class="col col-md-12">
         <div class="card">
-          <h5 class="card-header">Prefixes</h5>
+          <h5 class="card-header">前缀</h5>
           <div class="card-body htmx-container table-responsive"
             hx-get="{% url 'ipam:prefix_list' %}?vlan_id={{ object.pk }}"
             hx-trigger="load"

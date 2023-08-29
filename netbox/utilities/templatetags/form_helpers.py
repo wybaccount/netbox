@@ -50,8 +50,11 @@ def render_field(field, bulk_nullable=False, label=None):
     """
     Render a single form field from template
     """
+    # 详情页表单label
     flabel = ''
     labelMap = {
+        'VLAN group': 'VLAN组',
+        'Group ID': '组ID',
         'Description': '描述',
         'Tags': '标签',
         'Name': '名称',
@@ -94,9 +97,9 @@ def render_field(field, bulk_nullable=False, label=None):
         'Height (U)': '高度(U)',
         'Color': '颜色',
         'User': '用户',
-        'Rack': '机架',
+        'Rack': '机柜',
         'Units': '单位',
-        'Address': '机架',
+        'Address': '地址',
         'Link': '联系',
         'Title': '标题',
         'Phone': '电话',
@@ -112,6 +115,7 @@ def render_field(field, bulk_nullable=False, label=None):
         'Rack face': '机柜正面',
         'Cluster': '集群',
         'Virtual chassis': '虚拟机箱',
+        'Virtual Chassis': '虚拟机箱',
         'Config template': '配置模板',
         'Manufacturer': '制造商',
         'Device': '设备',
@@ -236,7 +240,7 @@ def render_field(field, bulk_nullable=False, label=None):
         'Circuit ID': '电路ID',
         'Installed': '安装日期',
         'Terminates': '终止日期',
-        'ASN (legacy)': 'ASN (旧版)',
+        'ASN (legacy)': 'ASN (传统版本)',
         'Account': '账户',
         'Account ID': '账户ID',
         'Service id': '服务id',
@@ -262,9 +266,16 @@ def render_field(field, bulk_nullable=False, label=None):
         'Tenant groups': '租户组',
         'File': '文件',
         'Data': '数据',
+        'Format': '格式',
         'Tenants': '租户',
         'Environment params': '环境参数',
-        'Template code': '模板代码'
+        'Template code': '模板代码',
+        'Circuit': '电路',
+        'Termination': '终端',
+        'Port speed (Kbps)': '端口速度(Kbps)',
+        'Upstream speed (Kbps)': '上行速度(Kbps)',
+        'Cross-connect ID': '交叉连接ID',
+        'Patch panel/port(s)': '配线面板/端口'
     }
     if field.label in labelMap:
         flabel = labelMap[field.label]

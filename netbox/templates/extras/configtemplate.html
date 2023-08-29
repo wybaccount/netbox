@@ -6,19 +6,19 @@
   <div class="row mb-3">
     <div class="col col-md-5">
       <div class="card">
-        <h5 class="card-header">Config Template</h5>
+        <h5 class="card-header">配置模板</h5>
         <div class="card-body">
           <table class="table table-hover attr-table">
             <tr>
-              <th scope="row">Name</th>
+              <th scope="row">名称</th>
               <td>{{ object.name }}</td>
             </tr>
             <tr>
-              <th scope="row">Description</th>
+              <th scope="row">描述</th>
               <td>{{ object.description|placeholder }}</td>
             </tr>
             <tr>
-              <th scope="row">Data Source</th>
+              <th scope="row">数据源</th>
               <td>
                 {% if object.data_source %}
                   <a href="{{ object.data_source.get_absolute_url }}">{{ object.data_source }}</a>
@@ -28,7 +28,7 @@
               </td>
             </tr>
             <tr>
-              <th scope="row">Data File</th>
+              <th scope="row">数据文件</th>
               <td>
                 {% if object.data_file %}
                   <a href="{{ object.data_file.get_absolute_url }}">{{ object.data_file }}</a>
@@ -43,7 +43,7 @@
               </td>
             </tr>
             <tr>
-              <th scope="row">Data Synced</th>
+              <th scope="row">数据同步</th>
               <td>{{ object.data_synced|placeholder }}</td>
             </tr>
           </table>
@@ -54,7 +54,7 @@
     </div>
     <div class="col col-md-7">
       <div class="card">
-        <h5 class="card-header">Environment Parameters</h5>
+        <h5 class="card-header">环境参数</h5>
         <div class="card-body">
           <pre>{{ object.environment_params }}</pre>
         </div>
@@ -65,7 +65,7 @@
   <div class="row">
     <div class="col col-md-12">
       <div class="card">
-        <h5 class="card-header">Template</h5>
+        <h5 class="card-header">模板</h5>
         <div class="card-body">
           {% include 'inc/sync_warning.html' %}
           <pre>{{ object.template_code }}</pre>

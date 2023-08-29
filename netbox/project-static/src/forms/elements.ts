@@ -3,6 +3,7 @@ import { getElements, scrollTo } from '../util';
 function handleFormSubmit(event: Event, form: HTMLFormElement): void {
   // Track the names of each invalid field.
   const invalids = new Set<string>();
+console.log('submit');
 
   for (const element of form.querySelectorAll<FormControls>('*[name]')) {
     if (!element.validity.valid) {
@@ -39,7 +40,8 @@ export function initFormElements(): void {
     // Find each of the form's submitters. Most object edit forms have a "Create" and
     // a "Create & Add", so we need to add a listener to both.
     const submitters = form.querySelectorAll<HTMLButtonElement>('button[type=submit]');
-
+    console.log('submit');
+    
     for (const submitter of submitters) {
       // Add the event listener to each submitter.
       submitter.addEventListener('click', (event: Event) => handleFormSubmit(event, form));

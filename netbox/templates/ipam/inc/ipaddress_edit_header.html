@@ -6,7 +6,7 @@
           class="nav-link {% if active_tab == 'add' %}active{% endif %}"
           href="{% url 'ipam:ipaddress_add' %}{% querystring request %}"
       >
-          {% if obj.pk %}Edit{% else %}Create{% endif %}
+          {% if obj.pk %}Edit{% else %}创建{% endif %}
       </a>
   </li>
   {% if 'interface' in request.GET or 'vminterface' in request.GET %}
@@ -24,7 +24,7 @@
           class="nav-link {% if active_tab == 'bulk_add' %}active{% endif %}"
           href="{% url 'ipam:ipaddress_bulk_add' %}{% querystring request %}"
       >
-          Bulk Create
+          批量创建
       </a>
   </li>
   {% endif %}

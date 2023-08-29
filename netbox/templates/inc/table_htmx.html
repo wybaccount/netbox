@@ -111,7 +111,7 @@
                 {% elif column.header == 'Region' %}
                 <span>地区</span>
                 {% elif column.header == 'Racks' or column.header == 'Rack' %}
-                <span>机架</span>
+                <span>机柜</span>
                 {% elif column.header == 'Devices' or column.header == 'Device' %}
                 <span>设备</span>
                 {% elif column.header == 'Location' %}
@@ -344,6 +344,10 @@
                 <span>电子邮件</span>
                 {% elif column.header == 'Contact Phone' %}
                 <span>电话</span>
+                {% elif column.header == 'Side A' %}
+                <span>A端</span>
+                {% elif column.header == 'Side Z' %}
+                <span>Z端</span>
                 {% else %}
                 {{ column.header }}
                 {% endif %}
@@ -353,6 +357,8 @@
           <th {{ column.attrs.th.as_html }}>
             {% if column.header == 'Utilization' %}
             <span>使用率</span>
+            {% elif column.header == 'Synced' %}
+              <span>已同步</span>
             {% elif column.header == 'Size (bytes)' %}
               <span>大小(字节)</span>
             {% elif column.header == 'Full Name' %}
@@ -410,9 +416,9 @@
             {% elif column.header == 'Units' %}
             <span>单位</span>
             {% elif column.header == 'Rack A' %}
-            <span>机架A</span>
+            <span>机柜A</span>
             {% elif column.header == 'Rack B' %}
-            <span>机架B</span>
+            <span>机柜B</span>
             {% elif column.header == 'Termination A' %}
             <span>终端A</span>
             {% elif column.header == 'Termination B' %}

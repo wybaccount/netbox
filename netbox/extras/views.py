@@ -371,19 +371,19 @@ class ConfigContextView(generic.ObjectView):
     def get_extra_context(self, request, instance):
         # Gather assigned objects for parsing in the template
         assigned_objects = (
-            ('Regions', instance.regions.all),
-            ('Site Groups', instance.site_groups.all),
-            ('Sites', instance.sites.all),
-            ('Locations', instance.locations.all),
-            ('Device Types', instance.device_types.all),
-            ('Roles', instance.roles.all),
-            ('Platforms', instance.platforms.all),
-            ('Cluster Types', instance.cluster_types.all),
-            ('Cluster Groups', instance.cluster_groups.all),
-            ('Clusters', instance.clusters.all),
-            ('Tenant Groups', instance.tenant_groups.all),
-            ('Tenants', instance.tenants.all),
-            ('Tags', instance.tags.all),
+            ('地区', instance.regions.all),
+            ('站点组', instance.site_groups.all),
+            ('站点', instance.sites.all),
+            ('地点', instance.locations.all),
+            ('设备类型', instance.device_types.all),
+            ('角色', instance.roles.all),
+            ('平台', instance.platforms.all),
+            ('集群类型', instance.cluster_types.all),
+            ('集群组', instance.cluster_groups.all),
+            ('集群', instance.clusters.all),
+            ('租户组', instance.tenant_groups.all),
+            ('租户', instance.tenants.all),
+            ('标签', instance.tags.all),
         )
 
         # Determine user's preferred output format

@@ -572,9 +572,9 @@ def VNP_map():
         'regions': '地区',
         'site groups': '站点组',
         'locations': '地点',
-        'racks': '机架',
-        'rack roles': '机架角色',
-        'rack reservations': '机架预订',
+        'racks': '机柜',
+        'rack roles': '机柜角色',
+        'rack reservations': '机柜预订',
         'tenants': '租户',
         'tenant group': '租户组',
         'tenant groups': '租户组',
@@ -618,6 +618,7 @@ def VNP_map():
         'prefixes': '前缀',
         'roles': '角色',
         'ASN ranges': 'ASN范围',
+        'ASN range': 'ASN范围',
         'ASNs': 'ASNs',
         'aggregates': '聚合',
         'route targets': '路由目标',
@@ -634,6 +635,10 @@ def VNP_map():
         'config contexts': '配置上下文',
         'config templates': '配置模板',
         'clusters': '集群',
-        'virtual machines': '虚拟机'
+        'virtual machines': '虚拟机',
+        'VLAN group': 'VLAN组',
+        'VLAN groups': 'VLAN组',
+        'FHRP group': 'FHRP 组',
+        'FHRP groups': 'FHRP 组'
     }
     return VNPMap

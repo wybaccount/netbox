@@ -18,28 +18,28 @@
 	<div class="col col-md-6">
         <div class="card">
             <h5 class="card-header">
-                Service
+                服务
             </h5>
             <div class="card-body">
                 <table class="table table-hover attr-table">
                     <tr>
-                        <th scope="row">Name</th>
+                        <th scope="row">名称</th>
                         <td>{{ object.name }}</td>
                     </tr>
                     <tr>
-                        <th scope="row">Parent</th>
+                        <th scope="row">上级</th>
                         <td>{{ object.parent|linkify }}</td>
                     </tr>
                     <tr>
-                        <th scope="row">Protocol</th>
+                        <th scope="row">协议</th>
                         <td>{{ object.get_protocol_display }}</td>
                     </tr>
                     <tr>
-                        <th scope="row">Ports</th>
+                        <th scope="row">端口</th>
                         <td>{{ object.port_list }}</td>
                     </tr>
                     <tr>
-                        <th scope="row">IP Addresses</th>
+                        <th scope="row">IP 地址</th>
                         <td>
                             {% for ipaddress in object.ipaddresses.all %}
                                 {{ ipaddress|linkify }}<br />
@@ -49,7 +49,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <th scope="row">Description</th>
+                        <th scope="row">描述</th>
                         <td>{{ object.description|placeholder }}</td>
                     </tr>
                 </table>

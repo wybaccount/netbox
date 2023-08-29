@@ -7,11 +7,11 @@
 <div class="row">
   <div class="col col-md-6">
     <div class="card">
-      <h5 class="card-header">Prefix</h5>
+      <h5 class="card-header">前缀</h5>
       <div class="card-body">
         <table class="table table-hover attr-table">
           <tr>
-            <th scope="row">Family</th>
+            <th scope="row">族</th>
             <td>IPv{{ object.family }}</td>
           </tr>
           <tr>
@@ -25,7 +25,7 @@
             </td>
           </tr>
           <tr>
-            <th scope="row">Tenant</th>
+            <th scope="row">租户</th>
               <td>
                 {% if object.tenant.group %}
                   {{ object.tenant.group|linkify }} /
@@ -34,7 +34,7 @@
               </td>
           </tr>
           <tr>
-            <th scope="row">Aggregate</th>
+            <th scope="row">聚合</th>
             <td>
               {% if aggregate %}
                 <a href="{% url 'ipam:aggregate' pk=aggregate.pk %}">{{ aggregate.prefix }}</a> ({{ aggregate.rir }})
@@ -44,7 +44,7 @@
             </td>
           </tr>
           <tr>
-            <th scope="row">Site</th>
+            <th scope="row">站点</th>
             <td>
               {% if object.site %}
                 {% if object.site.region %}
@@ -70,19 +70,19 @@
             </td>
           </tr>
           <tr>
-            <th scope="row">Status</th>
+            <th scope="row">状态</th>
             <td>{% badge object.get_status_display bg_color=object.get_status_color %}</td>
           </tr>
           <tr>
-            <th scope="row">Role</th>
+            <th scope="row">角色</th>
             <td>{{ object.role|linkify|placeholder }}</td>
           </tr>
           <tr>
-            <th scope="row">Description</th>
+            <th scope="row">描述</th>
             <td>{{ object.description|placeholder }}</td>
           </tr>
           <tr>
-            <th scope="row">Is a pool</th>
+            <th scope="row">资源池</th>
             <td>{% checkmark object.is_pool %}</td>
           </tr>
         </table>
@@ -92,11 +92,11 @@
   </div>
   <div class="col col-md-6">
     <div class="card">
-      <h5 class="card-header">Addressing</h5>
+      <h5 class="card-header">寻址</h5>
       <div class="card-body">
         <table class="table table-hover attr-table">
           <tr>
-            <th scope="row">Utilization</th>
+            <th scope="row">利用率</th>
             <td>
               {% if object.mark_utilized %}
                 {% utilization_graph 100 warning_threshold=0 danger_threshold=0 %}
@@ -108,7 +108,7 @@
           </tr>
           {% with child_ip_count=object.get_child_ips.count %}
             <tr>
-              <th scope="row">Child IPs</th>
+              <th scope="row">子IP</th>
               <td>
                 <a href="{% url 'ipam:prefix_ipaddresses' pk=object.pk %}">{{ child_ip_count }}</a>
               </td>
@@ -116,7 +116,7 @@
           {% endwith %}
           {% with available_count=object.get_available_ips.size %}
             <tr>
-              <th scope="row">Available IPs</th>
+              <th scope="row">可用IP</th>
               <td>
                 {# Use human-friendly words for counts greater than one million #}
                 {% if available_count > 1000000 %}
@@ -128,7 +128,7 @@
             </tr>
           {% endwith %}
           <tr>
-            <td>First available IP</td>
+            <td>第一个可用IP</td>
             <td>
               {% with first_available_ip=object.get_first_available_ip %}
                 {% if first_available_ip %}
@@ -147,7 +147,7 @@
         {% if object.prefix.version == 4 %}
           <div class="float-end">
             <a class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#prefix-modal">
-              <i class="mdi mdi-information-outline" aria-hidden="true"></i> Addressing Details
+              <i class="mdi mdi-information-outline" aria-hidden="true"></i> 寻址细节
             </a>
           </div>
         {% endif %}
@@ -164,7 +164,7 @@
         {% if duplicate_prefix_table.rows %}
             {% include 'inc/panel_table.html' with table=duplicate_prefix_table heading='Duplicate Prefixes' %}
         {% endif %}
-        {% include 'inc/panel_table.html' with table=parent_prefix_table heading='Parent Prefixes' %}
+        {% include 'inc/panel_table.html' with table=parent_prefix_table heading='父前缀' %}
         {% plugin_full_width_page object %}
     </div>
 </div>
