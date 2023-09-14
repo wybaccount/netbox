@@ -270,9 +270,9 @@ class ConfigContextForm(BootstrapMixin, SyncedDataMixin, forms.ModelForm):
     )
 
     fieldsets = (
-        ('Config Context', ('name', 'weight', 'description', 'data', 'is_active')),
-        ('Data Source', ('data_source', 'data_file', 'auto_sync_enabled')),
-        ('Assignment', (
+        ('配置上下文', ('name', 'weight', 'description', 'data', 'is_active')),
+        ('数据源', ('data_source', 'data_file', 'auto_sync_enabled')),
+        ('分配', (
             'regions', 'site_groups', 'sites', 'locations', 'device_types', 'roles', 'platforms', 'cluster_types',
             'cluster_groups', 'clusters', 'tenant_groups', 'tenants', 'tags',
         )),
@@ -320,9 +320,9 @@ class ConfigTemplateForm(BootstrapMixin, SyncedDataMixin, forms.ModelForm):
     )
 
     fieldsets = (
-        ('Config Template', ('name', 'description', 'environment_params', 'tags')),
-        ('Content', ('template_code',)),
-        ('Data Source', ('data_source', 'data_file', 'auto_sync_enabled')),
+        ('配置模板', ('name', 'description', 'environment_params', 'tags')),
+        ('内容', ('template_code',)),
+        ('数据源', ('data_source', 'data_file', 'auto_sync_enabled')),
     )
 
     class Meta:

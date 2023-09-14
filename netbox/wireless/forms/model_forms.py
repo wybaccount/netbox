@@ -152,11 +152,11 @@ class WirelessLinkForm(TenancyForm, NetBoxModelForm):
     comments = CommentField()
 
     fieldsets = (
-        ('Side A', ('site_a', 'location_a', 'device_a', 'interface_a')),
-        ('Side B', ('site_b', 'location_b', 'device_b', 'interface_b')),
-        ('Link', ('status', 'ssid', 'description', 'tags')),
-        ('Tenancy', ('tenant_group', 'tenant')),
-        ('Authentication', ('auth_type', 'auth_cipher', 'auth_psk')),
+        ('A端', ('site_a', 'location_a', 'device_a', 'interface_a')),
+        ('B端', ('site_b', 'location_b', 'device_b', 'interface_b')),
+        ('链接', ('status', 'ssid', 'description', 'tags')),
+        ('租户', ('tenant_group', 'tenant')),
+        ('身份验证', ('auth_type', 'auth_cipher', 'auth_psk')),
     )
 
     class Meta:

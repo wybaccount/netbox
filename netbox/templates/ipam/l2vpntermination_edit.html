@@ -5,7 +5,7 @@
 {% block form %}
   <div class="field-group my-5">
     <div class="row mb-2">
-      <h5 class="offset-sm-3">L2VPN Termination</h5>
+      <h5 class="offset-sm-3">L2VPN终端</h5>
     </div>
     {% render_field form.l2vpn %}
     <div class="row mb-3">
@@ -18,12 +18,12 @@
           </li>
           <li role="presentation" class="nav-item">
             <button role="tab" type="button" id="interface_tab" data-bs-toggle="tab" aria-controls="interface" data-bs-target="#interface" class="nav-link {% if form.initial.interface %}active{% endif %}">
-              Device
+              设备
             </button>
           </li>
           <li role="presentation" class="nav-item">
             <button role="tab" type="button" id="vminterface_tab" data-bs-toggle="tab" aria-controls="vminterface" data-bs-target="#vminterface" class="nav-link {% if form.initial.vminterface %}active{% endif %}">
-              Virtual Machine
+              虚拟机
             </button>
           </li>
         </ul>

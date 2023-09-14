@@ -76,7 +76,7 @@ class RegionForm(NetBoxModelForm):
     slug = SlugField()
 
     fieldsets = (
-        ('Region', (
+        ('地区', (
             'parent', 'name', 'slug', 'description', 'tags',
         )),
     )
@@ -96,7 +96,7 @@ class SiteGroupForm(NetBoxModelForm):
     slug = SlugField()
 
     fieldsets = (
-        ('Site Group', (
+        ('站点组', (
             'parent', 'name', 'slug', 'description', 'tags',
         )),
     )
@@ -172,8 +172,8 @@ class LocationForm(TenancyForm, NetBoxModelForm):
     slug = SlugField()
 
     fieldsets = (
-        ('Location', ('site', 'parent', 'name', 'slug', 'status', 'description', 'tags')),
-        ('Tenancy', ('tenant_group', 'tenant')),
+        ('位置', ('site', 'parent', 'name', 'slug', 'status', 'description', 'tags')),
+        ('租户', ('tenant_group', 'tenant')),
     )
 
     class Meta:
@@ -187,7 +187,7 @@ class RackRoleForm(NetBoxModelForm):
     slug = SlugField()
 
     fieldsets = (
-        ('Rack Role', (
+        ('机柜角色', (
             'name', 'slug', 'color', 'description', 'tags',
         )),
     )
@@ -243,8 +243,8 @@ class RackReservationForm(TenancyForm, NetBoxModelForm):
     comments = CommentField()
 
     fieldsets = (
-        ('Reservation', ('rack', 'units', 'user', 'description', 'tags')),
-        ('Tenancy', ('tenant_group', 'tenant')),
+        ('预定', ('rack', 'units', 'user', 'description', 'tags')),
+        ('租户', ('tenant_group', 'tenant')),
     )
 
     class Meta:
@@ -258,7 +258,7 @@ class ManufacturerForm(NetBoxModelForm):
     slug = SlugField()
 
     fieldsets = (
-        ('Manufacturer', (
+        ('制造商', (
             'name', 'slug', 'description', 'tags',
         )),
     )
@@ -284,11 +284,11 @@ class DeviceTypeForm(NetBoxModelForm):
     comments = CommentField()
 
     fieldsets = (
-        ('Device Type', ('manufacturer', 'model', 'slug', 'default_platform', 'description', 'tags')),
-        ('Chassis', (
+        ('设备类型', ('manufacturer', 'model', 'slug', 'default_platform', 'description', 'tags')),
+        ('机箱', (
             'u_height', 'is_full_depth', 'part_number', 'subdevice_role', 'airflow', 'weight', 'weight_unit',
         )),
-        ('Images', ('front_image', 'rear_image')),
+        ('图片', ('front_image', 'rear_image')),
     )
 
     class Meta:
@@ -315,8 +315,8 @@ class ModuleTypeForm(NetBoxModelForm):
     comments = CommentField()
 
     fieldsets = (
-        ('Module Type', ('manufacturer', 'model', 'part_number', 'description', 'tags')),
-        ('Weight', ('weight', 'weight_unit'))
+        ('模块类型', ('manufacturer', 'model', 'part_number', 'description', 'tags')),
+        ('重量', ('weight', 'weight_unit'))
     )
 
     class Meta:
@@ -334,7 +334,7 @@ class DeviceRoleForm(NetBoxModelForm):
     slug = SlugField()
 
     fieldsets = (
-        ('Device Role', (
+        ('设备角色', (
             'name', 'slug', 'color', 'vm_role', 'config_template', 'description', 'tags',
         )),
     )
@@ -360,7 +360,7 @@ class PlatformForm(NetBoxModelForm):
     )
 
     fieldsets = (
-        ('Platform', (
+        ('平台', (
             'name', 'slug', 'manufacturer', 'config_template', 'napalm_driver', 'napalm_args', 'description', 'tags',
         )),
     )
@@ -546,8 +546,8 @@ class ModuleForm(ModuleCommonForm, NetBoxModelForm):
     )
 
     fieldsets = (
-        ('Module', ('device', 'module_bay', 'module_type', 'status', 'description', 'tags')),
-        ('Hardware', (
+        ('模块', ('device', 'module_bay', 'module_type', 'status', 'description', 'tags')),
+        ('硬件', (
             'serial', 'asset_tag', 'replicate_components', 'adopt_components',
         )),
     )
@@ -601,7 +601,7 @@ class PowerPanelForm(NetBoxModelForm):
     comments = CommentField()
 
     fieldsets = (
-        ('Power Panel', ('site', 'location', 'name', 'description', 'tags')),
+        ('电源面板', ('site', 'location', 'name', 'description', 'tags')),
     )
 
     class Meta:
@@ -624,8 +624,8 @@ class PowerFeedForm(NetBoxModelForm):
     comments = CommentField()
 
     fieldsets = (
-        ('Power Feed', ('power_panel', 'rack', 'name', 'status', 'type', 'description', 'mark_connected', 'tags')),
-        ('Characteristics', ('supply', 'voltage', 'amperage', 'phase', 'max_utilization')),
+        ('电源馈线', ('power_panel', 'rack', 'name', 'status', 'type', 'description', 'mark_connected', 'tags')),
+        ('特征', ('supply', 'voltage', 'amperage', 'phase', 'max_utilization')),
     )
 
     class Meta:
@@ -1119,13 +1119,13 @@ class InterfaceForm(InterfaceCommonForm, ModularDeviceComponentForm):
     )
 
     fieldsets = (
-        ('Interface', ('device', 'module', 'name', 'label', 'type', 'speed', 'duplex', 'description', 'tags')),
-        ('Addressing', ('vrf', 'mac_address', 'wwn')),
-        ('Operation', ('vdcs', 'mtu', 'tx_power', 'enabled', 'mgmt_only', 'mark_connected')),
-        ('Related Interfaces', ('parent', 'bridge', 'lag')),
+        ('接口', ('device', 'module', 'name', 'label', 'type', 'speed', 'duplex', 'description', 'tags')),
+        ('地址', ('vrf', 'mac_address', 'wwn')),
+        ('操作', ('vdcs', 'mtu', 'tx_power', 'enabled', 'mgmt_only', 'mark_connected')),
+        ('相关接口', ('parent', 'bridge', 'lag')),
         ('PoE', ('poe_mode', 'poe_type')),
-        ('802.1Q Switching', ('mode', 'vlan_group', 'untagged_vlan', 'tagged_vlans')),
-        ('Wireless', (
+        ('802.1Q 交换', ('mode', 'vlan_group', 'untagged_vlan', 'tagged_vlans')),
+        ('无线', (
             'rf_role', 'rf_channel', 'rf_channel_frequency', 'rf_channel_width', 'wireless_lan_group', 'wireless_lans',
         )),
     )
@@ -1371,7 +1371,7 @@ class InventoryItemRoleForm(NetBoxModelForm):
     slug = SlugField()
 
     fieldsets = (
-        ('Inventory Item Role', (
+        ('库存项角色', (
             'name', 'slug', 'color', 'description', 'tags',
         )),
     )
@@ -1408,8 +1408,8 @@ class VirtualDeviceContextForm(TenancyForm, NetBoxModelForm):
     )
 
     fieldsets = (
-        ('Virtual Device Context', ('device', 'name', 'status', 'identifier', 'primary_ip4', 'primary_ip6', 'tags')),
-        ('Tenancy', ('tenant_group', 'tenant'))
+        ('虚拟设备上下文', ('device', 'name', 'status', 'identifier', 'primary_ip4', 'primary_ip6', 'tags')),
+        ('租户', ('tenant_group', 'tenant'))
     )
 
     class Meta:

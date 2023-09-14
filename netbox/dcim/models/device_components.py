@@ -566,7 +566,7 @@ class Interface(ModularComponentModel, BaseInterface, CabledObjectModel, PathEnd
     )
     mgmt_only = models.BooleanField(
         default=False,
-        verbose_name='Management only',
+        verbose_name='仅用于管理',
         help_text=_('This interface is used only for out-of-band management')
     )
     speed = models.PositiveIntegerField(

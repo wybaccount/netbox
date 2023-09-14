@@ -15,11 +15,11 @@ class SiteStatusChoices(ChoiceSet):
     STATUS_RETIRED = 'retired'
 
     CHOICES = [
-        (STATUS_PLANNED, 'Planned', 'cyan'),
-        (STATUS_STAGING, 'Staging', 'blue'),
-        (STATUS_ACTIVE, 'Active', 'green'),
-        (STATUS_DECOMMISSIONING, 'Decommissioning', 'yellow'),
-        (STATUS_RETIRED, 'Retired', 'red'),
+        (STATUS_PLANNED, '规划中', 'cyan'),
+        (STATUS_STAGING, '预备中', 'blue'),
+        (STATUS_ACTIVE, '运行中', 'green'),
+        (STATUS_DECOMMISSIONING, '停用中', 'yellow'),
+        (STATUS_RETIRED, '已停用', 'red'),
     ]
 
 
@@ -37,11 +37,11 @@ class LocationStatusChoices(ChoiceSet):
     STATUS_RETIRED = 'retired'
 
     CHOICES = [
-        (STATUS_PLANNED, 'Planned', 'cyan'),
-        (STATUS_STAGING, 'Staging', 'blue'),
-        (STATUS_ACTIVE, 'Active', 'green'),
-        (STATUS_DECOMMISSIONING, 'Decommissioning', 'yellow'),
-        (STATUS_RETIRED, 'Retired', 'red'),
+        (STATUS_PLANNED, '规划中', 'cyan'),
+        (STATUS_STAGING, '预备中', 'blue'),
+        (STATUS_ACTIVE, '运行中', 'green'),
+        (STATUS_DECOMMISSIONING, '停用中', 'yellow'),
+        (STATUS_RETIRED, '已停用', 'red'),
     ]
 
 
@@ -60,13 +60,13 @@ class RackTypeChoices(ChoiceSet):
     TYPE_WALLCABINET_VERTICAL = 'wall-cabinet-vertical'
 
     CHOICES = (
-        (TYPE_2POST, '2-post frame'),
-        (TYPE_4POST, '4-post frame'),
-        (TYPE_CABINET, '4-post cabinet'),
-        (TYPE_WALLFRAME, 'Wall-mounted frame'),
-        (TYPE_WALLFRAME_VERTICAL, 'Wall-mounted frame (vertical)'),
-        (TYPE_WALLCABINET, 'Wall-mounted cabinet'),
-        (TYPE_WALLCABINET_VERTICAL, 'Wall-mounted cabinet (vertical)'),
+        (TYPE_2POST, '2柱机架'),
+        (TYPE_4POST, '4柱机架'),
+        (TYPE_CABINET, '4柱机柜'),
+        (TYPE_WALLFRAME, '壁挂式机架'),
+        (TYPE_WALLFRAME_VERTICAL, '竖式壁挂机架'),
+        (TYPE_WALLCABINET, '壁挂式机柜'),
+        (TYPE_WALLCABINET_VERTICAL, '竖式壁挂机柜'),
     )
 
 
@@ -78,10 +78,10 @@ class RackWidthChoices(ChoiceSet):
     WIDTH_23IN = 23
 
     CHOICES = (
-        (WIDTH_10IN, '10 inches'),
-        (WIDTH_19IN, '19 inches'),
-        (WIDTH_21IN, '21 inches'),
-        (WIDTH_23IN, '23 inches'),
+        (WIDTH_10IN, '10 英寸'),
+        (WIDTH_19IN, '19 英寸'),
+        (WIDTH_21IN, '21 英寸'),
+        (WIDTH_23IN, '23 英寸'),
     )
 
 
@@ -95,11 +95,11 @@ class RackStatusChoices(ChoiceSet):
     STATUS_DEPRECATED = 'deprecated'
 
     CHOICES = [
-        (STATUS_RESERVED, 'Reserved', 'yellow'),
-        (STATUS_AVAILABLE, 'Available', 'green'),
-        (STATUS_PLANNED, 'Planned', 'cyan'),
-        (STATUS_ACTIVE, 'Active', 'blue'),
-        (STATUS_DEPRECATED, 'Deprecated', 'red'),
+        (STATUS_RESERVED, '保留', 'yellow'),
+        (STATUS_AVAILABLE, '可用', 'green'),
+        (STATUS_PLANNED, '规划中', 'cyan'),
+        (STATUS_ACTIVE, '运行中', 'blue'),
+        (STATUS_DEPRECATED, '已废弃', 'red'),
     ]
 
 
@@ -109,8 +109,8 @@ class RackDimensionUnitChoices(ChoiceSet):
     UNIT_INCH = 'in'
 
     CHOICES = (
-        (UNIT_MILLIMETER, 'Millimeters'),
-        (UNIT_INCH, 'Inches'),
+        (UNIT_MILLIMETER, '毫米'),
+        (UNIT_INCH, '英寸'),
     )
 
 
@@ -167,13 +167,13 @@ class DeviceStatusChoices(ChoiceSet):
     STATUS_DECOMMISSIONING = 'decommissioning'
 
     CHOICES = [
-        (STATUS_OFFLINE, 'Offline', 'gray'),
-        (STATUS_ACTIVE, 'Active', 'green'),
-        (STATUS_PLANNED, 'Planned', 'cyan'),
-        (STATUS_STAGED, 'Staged', 'blue'),
-        (STATUS_FAILED, 'Failed', 'red'),
-        (STATUS_INVENTORY, 'Inventory', 'purple'),
-        (STATUS_DECOMMISSIONING, 'Decommissioning', 'yellow'),
+        (STATUS_OFFLINE, '离线', 'gray'),
+        (STATUS_ACTIVE, '运行中', 'green'),
+        (STATUS_PLANNED, '规划中', 'cyan'),
+        (STATUS_STAGED, '预备中', 'blue'),
+        (STATUS_FAILED, '失败', 'red'),
+        (STATUS_INVENTORY, '库存', 'purple'),
+        (STATUS_DECOMMISSIONING, '停用中', 'yellow'),
     ]
 
 
@@ -188,13 +188,13 @@ class DeviceAirflowChoices(ChoiceSet):
     AIRFLOW_MIXED = 'mixed'
 
     CHOICES = (
-        (AIRFLOW_FRONT_TO_REAR, 'Front to rear'),
-        (AIRFLOW_REAR_TO_FRONT, 'Rear to front'),
-        (AIRFLOW_LEFT_TO_RIGHT, 'Left to right'),
-        (AIRFLOW_RIGHT_TO_LEFT, 'Right to left'),
-        (AIRFLOW_SIDE_TO_REAR, 'Side to rear'),
-        (AIRFLOW_PASSIVE, 'Passive'),
-        (AIRFLOW_MIXED, 'Mixed'),
+        (AIRFLOW_FRONT_TO_REAR, '从前代后'),
+        (AIRFLOW_REAR_TO_FRONT, '从后到前'),
+        (AIRFLOW_LEFT_TO_RIGHT, '从左到又'),
+        (AIRFLOW_RIGHT_TO_LEFT, '从右到左'),
+        (AIRFLOW_SIDE_TO_REAR, '从侧面到背面'),
+        (AIRFLOW_PASSIVE, '被动'),
+        (AIRFLOW_MIXED, '混合'),
     )
 
 
@@ -213,12 +213,12 @@ class ModuleStatusChoices(ChoiceSet):
     STATUS_DECOMMISSIONING = 'decommissioning'
 
     CHOICES = [
-        (STATUS_OFFLINE, 'Offline', 'gray'),
-        (STATUS_ACTIVE, 'Active', 'green'),
-        (STATUS_PLANNED, 'Planned', 'cyan'),
-        (STATUS_STAGED, 'Staged', 'blue'),
-        (STATUS_FAILED, 'Failed', 'red'),
-        (STATUS_DECOMMISSIONING, 'Decommissioning', 'yellow'),
+        (STATUS_OFFLINE, '离线', 'gray'),
+        (STATUS_ACTIVE, '运行中', 'green'),
+        (STATUS_PLANNED, '规划中', 'cyan'),
+        (STATUS_STAGED, '预备中', 'blue'),
+        (STATUS_FAILED, '失败', 'red'),
+        (STATUS_DECOMMISSIONING, '停用中', 'yellow'),
     ]
 
 
@@ -1127,9 +1127,9 @@ class InterfaceDuplexChoices(ChoiceSet):
     DUPLEX_AUTO = 'auto'
 
     CHOICES = (
-        (DUPLEX_HALF, 'Half'),
-        (DUPLEX_FULL, 'Full'),
-        (DUPLEX_AUTO, 'Auto'),
+        (DUPLEX_HALF, '半双工'),
+        (DUPLEX_FULL, '全双工'),
+        (DUPLEX_AUTO, '自动'),
     )
 
 
@@ -1140,9 +1140,9 @@ class InterfaceModeChoices(ChoiceSet):
     MODE_TAGGED_ALL = 'tagged-all'
 
     CHOICES = (
-        (MODE_ACCESS, 'Access'),
-        (MODE_TAGGED, 'Tagged'),
-        (MODE_TAGGED_ALL, 'Tagged (All)'),
+        (MODE_ACCESS, '访问'),
+        (MODE_TAGGED, '标记'),
+        (MODE_TAGGED_ALL, '全部标记'),
     )
 
 
@@ -1383,9 +1383,9 @@ class LinkStatusChoices(ChoiceSet):
     STATUS_DECOMMISSIONING = 'decommissioning'
 
     CHOICES = (
-        (STATUS_CONNECTED, 'Connected', 'green'),
-        (STATUS_PLANNED, 'Planned', 'blue'),
-        (STATUS_DECOMMISSIONING, 'Decommissioning', 'yellow'),
+        (STATUS_CONNECTED, '已连接', 'green'),
+        (STATUS_PLANNED, '规划中', 'blue'),
+        (STATUS_DECOMMISSIONING, '停用中', 'yellow'),
     )
 
 
@@ -1422,10 +1422,10 @@ class WeightUnitChoices(ChoiceSet):
     UNIT_OUNCE = 'oz'
 
     CHOICES = (
-        (UNIT_KILOGRAM, 'Kilograms'),
-        (UNIT_GRAM, 'Grams'),
-        (UNIT_POUND, 'Pounds'),
-        (UNIT_OUNCE, 'Ounces'),
+        (UNIT_KILOGRAM, '千克'),
+        (UNIT_GRAM, '克'),
+        (UNIT_POUND, '磅'),
+        (UNIT_OUNCE, '盎司'),
     )
 
 
@@ -1458,10 +1458,10 @@ class PowerFeedStatusChoices(ChoiceSet):
     STATUS_FAILED = 'failed'
 
     CHOICES = [
-        (STATUS_OFFLINE, 'Offline', 'gray'),
-        (STATUS_ACTIVE, 'Active', 'green'),
-        (STATUS_PLANNED, 'Planned', 'blue'),
-        (STATUS_FAILED, 'Failed', 'red'),
+        (STATUS_OFFLINE, '离线', 'gray'),
+        (STATUS_ACTIVE, '运行中', 'green'),
+        (STATUS_PLANNED, '规划中', 'blue'),
+        (STATUS_FAILED, '失败', 'red'),
     ]
 
 
@@ -1471,8 +1471,8 @@ class PowerFeedTypeChoices(ChoiceSet):
     TYPE_REDUNDANT = 'redundant'
 
     CHOICES = (
-        (TYPE_PRIMARY, 'Primary', 'green'),
-        (TYPE_REDUNDANT, 'Redundant', 'cyan'),
+        (TYPE_PRIMARY, '主要电源馈电', 'green'),
+        (TYPE_REDUNDANT, '冗余电源馈电', 'cyan'),
     )
 
 
@@ -1493,8 +1493,8 @@ class PowerFeedPhaseChoices(ChoiceSet):
     PHASE_3PHASE = 'three-phase'
 
     CHOICES = (
-        (PHASE_SINGLE, 'Single phase'),
-        (PHASE_3PHASE, 'Three-phase'),
+        (PHASE_SINGLE, '单相'),
+        (PHASE_3PHASE, '三相'),
     )
 
 
@@ -1509,7 +1509,7 @@ class VirtualDeviceContextStatusChoices(ChoiceSet):
     STATUS_OFFLINE = 'offline'
 
     CHOICES = [
-        (STATUS_ACTIVE, 'Active', 'green'),
-        (STATUS_PLANNED, 'Planned', 'cyan'),
-        (STATUS_OFFLINE, 'Offline', 'red'),
+        (STATUS_ACTIVE, '运行中', 'green'),
+        (STATUS_PLANNED, '规划中', 'cyan'),
+        (STATUS_OFFLINE, '离线', 'red'),
     ]

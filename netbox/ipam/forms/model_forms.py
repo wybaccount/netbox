@@ -57,8 +57,8 @@ class VRFForm(TenancyForm, NetBoxModelForm):
 
     fieldsets = (
         ('VRF', ('name', 'rd', 'enforce_unique', 'description', 'tags')),
-        ('Route Targets', ('import_targets', 'export_targets')),
-        ('Tenancy', ('tenant_group', 'tenant')),
+        ('路由目标', ('import_targets', 'export_targets')),
+        ('租用', ('tenant_group', 'tenant')),
     )
 
     class Meta:
@@ -74,8 +74,8 @@ class VRFForm(TenancyForm, NetBoxModelForm):
 
 class RouteTargetForm(TenancyForm, NetBoxModelForm):
     fieldsets = (
-        ('Route Target', ('name', 'description', 'tags')),
-        ('Tenancy', ('tenant_group', 'tenant')),
+        ('路由目标', ('name', 'description', 'tags')),
+        ('租用', ('tenant_group', 'tenant')),
     )
     comments = CommentField()
 
@@ -110,8 +110,8 @@ class AggregateForm(TenancyForm, NetBoxModelForm):
     comments = CommentField()
 
     fieldsets = (
-        ('Aggregate', ('prefix', 'rir', 'date_added', 'description', 'tags')),
-        ('Tenancy', ('tenant_group', 'tenant')),
+        ('聚合', ('prefix', 'rir', 'date_added', 'description', 'tags')),
+        ('租用', ('tenant_group', 'tenant')),
     )
 
     class Meta:
@@ -131,8 +131,8 @@ class ASNRangeForm(TenancyForm, NetBoxModelForm):
     )
     slug = SlugField()
     fieldsets = (
-        ('ASN Range', ('name', 'slug', 'rir', 'start', 'end', 'description', 'tags')),
-        ('Tenancy', ('tenant_group', 'tenant')),
+        ('ASN范围', ('name', 'slug', 'rir', 'start', 'end', 'description', 'tags')),
+        ('租用', ('tenant_group', 'tenant')),
     )
 
     class Meta:
@@ -156,7 +156,7 @@ class ASNForm(TenancyForm, NetBoxModelForm):
 
     fieldsets = (
         ('ASN', ('asn', 'rir', 'sites', 'description', 'tags')),
-        ('Tenancy', ('tenant_group', 'tenant')),
+        ('租用', ('tenant_group', 'tenant')),
     )
 
     class Meta:
@@ -184,7 +184,7 @@ class RoleForm(NetBoxModelForm):
     slug = SlugField()
 
     fieldsets = (
-        ('Role', (
+        ('角色', (
             'name', 'slug', 'weight', 'description', 'tags',
         )),
     )
@@ -221,9 +221,9 @@ class PrefixForm(TenancyForm, NetBoxModelForm):
     comments = CommentField()
 
     fieldsets = (
-        ('Prefix', ('prefix', 'status', 'vrf', 'role', 'is_pool', 'mark_utilized', 'description', 'tags')),
-        ('Site/VLAN Assignment', ('site', 'vlan')),
-        ('Tenancy', ('tenant_group', 'tenant')),
+        ('前缀', ('prefix', 'status', 'vrf', 'role', 'is_pool', 'mark_utilized', 'description', 'tags')),
+        ('站点/VLAN 分配', ('site', 'vlan')),
+        ('租用', ('tenant_group', 'tenant')),
     )
 
     class Meta:
@@ -247,8 +247,8 @@ class IPRangeForm(TenancyForm, NetBoxModelForm):
     comments = CommentField()
 
     fieldsets = (
-        ('IP Range', ('vrf', 'start_address', 'end_address', 'role', 'status', 'mark_utilized', 'description', 'tags')),
-        ('Tenancy', ('tenant_group', 'tenant')),
+        ('IP范围', ('vrf', 'start_address', 'end_address', 'role', 'status', 'mark_utilized', 'description', 'tags')),
+        ('租用', ('tenant_group', 'tenant')),
     )
 
     class Meta:
@@ -290,7 +290,7 @@ class IPAddressForm(TenancyForm, NetBoxModelForm):
     )
     primary_for_parent = forms.BooleanField(
         required=False,
-        label=_('Make this the primary IP for the device/VM')
+        label=_('将此设置为 设备/虚拟机 的主要 IP')
     )
     comments = CommentField()
 
@@ -441,9 +441,9 @@ class FHRPGroupForm(NetBoxModelForm):
     comments = CommentField()
 
     fieldsets = (
-        ('FHRP Group', ('protocol', 'group_id', 'name', 'description', 'tags')),
-        ('Authentication', ('auth_type', 'auth_key')),
-        ('Virtual IP Address', ('ip_vrf', 'ip_address', 'ip_status'))
+        ('FHRP组', ('protocol', 'group_id', 'name', 'description', 'tags')),
+        ('身份验证', ('auth_type', 'auth_key')),
+        ('虚拟IP地址', ('ip_vrf', 'ip_address', 'ip_status'))
     )
 
     class Meta:
@@ -578,9 +578,9 @@ class VLANGroupForm(NetBoxModelForm):
     slug = SlugField()
 
     fieldsets = (
-        ('VLAN Group', ('name', 'slug', 'description', 'tags')),
-        ('Child VLANs', ('min_vid', 'max_vid')),
-        ('Scope', ('scope_type', 'region', 'sitegroup', 'site', 'location', 'rack', 'clustergroup', 'cluster')),
+        ('VLAN组', ('name', 'slug', 'description', 'tags')),
+        ('子虚拟局域网', ('min_vid', 'max_vid')),
+        ('范围', ('scope_type', 'region', 'sitegroup', 'site', 'location', 'rack', 'clustergroup', 'cluster')),
     )
 
     class Meta:
@@ -650,7 +650,7 @@ class ServiceTemplateForm(NetBoxModelForm):
     comments = CommentField()
 
     fieldsets = (
-        ('Service Template', (
+        ('服务模板', (
             'name', 'protocol', 'ports', 'description', 'tags',
         )),
     )
@@ -749,8 +749,8 @@ class L2VPNForm(TenancyForm, NetBoxModelForm):
 
     fieldsets = (
         ('L2VPN', ('name', 'slug', 'type', 'identifier', 'description', 'tags')),
-        ('Route Targets', ('import_targets', 'export_targets')),
-        ('Tenancy', ('tenant_group', 'tenant')),
+        ('路由目标', ('import_targets', 'export_targets')),
+        ('租用', ('tenant_group', 'tenant')),
     )
 
     class Meta:

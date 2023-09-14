@@ -29,7 +29,7 @@ class ProviderForm(NetBoxModelForm):
     comments = CommentField()
 
     fieldsets = (
-        ('Provider', ('name', 'slug', 'asns', 'description', 'tags')),
+        ('供应商', ('name', 'slug', 'asns', 'description', 'tags')),
     )
 
     class Meta:
@@ -59,7 +59,7 @@ class ProviderNetworkForm(NetBoxModelForm):
     comments = CommentField()
 
     fieldsets = (
-        ('Provider Network', ('provider', 'name', 'service_id', 'description', 'tags')),
+        ('供应商网络', ('provider', 'name', 'service_id', 'description', 'tags')),
     )
 
     class Meta:
@@ -73,7 +73,7 @@ class CircuitTypeForm(NetBoxModelForm):
     slug = SlugField()
 
     fieldsets = (
-        ('Circuit Type', (
+        ('电路类型', (
             'name', 'slug', 'description', 'tags',
         )),
     )
@@ -103,9 +103,9 @@ class CircuitForm(TenancyForm, NetBoxModelForm):
     comments = CommentField()
 
     fieldsets = (
-        ('Circuit', ('provider', 'provider_account', 'cid', 'type', 'status', 'description', 'tags')),
-        ('Service Parameters', ('install_date', 'termination_date', 'commit_rate')),
-        ('Tenancy', ('tenant_group', 'tenant')),
+        ('电路', ('provider', 'provider_account', 'cid', 'type', 'status', 'description', 'tags')),
+        ('服务参数', ('install_date', 'termination_date', 'commit_rate')),
+        ('租用', ('tenant_group', 'tenant')),
     )
 
     class Meta:

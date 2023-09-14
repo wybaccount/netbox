@@ -131,7 +131,7 @@ class Rack(PrimaryModel, WeightMixin):
     )
     desc_units = models.BooleanField(
         default=False,
-        verbose_name='Descending units',
+        verbose_name='降序单位',
         help_text=_('Units are numbered top-to-bottom')
     )
     outer_width = models.PositiveSmallIntegerField(

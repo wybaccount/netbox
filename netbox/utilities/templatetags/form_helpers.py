@@ -152,7 +152,7 @@ def render_field(field, bulk_nullable=False, label=None):
         'Label': '标签',
         'Enabled': '启用',
         'Speed': '速度',
-        'Duplex': '复式',
+        'Duplex': '双工',
         'Mode': '模式',
         'MAC address': 'MAC地址',
         'PoE mode': 'PoE模式',
@@ -174,6 +174,7 @@ def render_field(field, bulk_nullable=False, label=None):
         'LAG interface': 'LAG接口',
         'Channel frequency (MHz)': '信道频率(MHz)',
         'Wireless LAN group': '无线局域网组',
+        'Wireless LANs': '无线局域网',
         'Rear ports': '背面端口',
         'Maximum draw': '最大功耗',
         'Allocated draw': '分配功耗',
@@ -207,7 +208,7 @@ def render_field(field, bulk_nullable=False, label=None):
         'Start address': '起始地址',
         'End address': '结束地址',
         'Search within': '搜索范围内',
-        'Is a pool': '是一个地址池',
+        'Is a pool': '是一个资源池',
         'Prefix': '前缀',
         'Start': '首',
         'End': '尾',
@@ -229,6 +230,8 @@ def render_field(field, bulk_nullable=False, label=None):
         'Ports': '端口',
         'Service template': '服务模板',
         'IP Addresses': 'IP地址',
+        'DNS Name': 'DNS名称',
+        'FHRP Group': 'FHRP组',
         'Assigned Object Type': '分配对象类型',
         'Virtual Machine': '虚拟机',
         'Provider': '供应商',
@@ -275,7 +278,16 @@ def render_field(field, bulk_nullable=False, label=None):
         'Port speed (Kbps)': '端口速度(Kbps)',
         'Upstream speed (Kbps)': '上行速度(Kbps)',
         'Cross-connect ID': '交叉连接ID',
-        'Patch panel/port(s)': '配线面板/端口'
+        'Patch panel/port(s)': '配线面板/端口',
+        'Replicate components': '复制组件',
+        'Adopt components': '采用组件',
+        '802.1Q Mode': '802.1Q 模式',
+        'Mark connected': '标记已连接',
+        'Mark utilized': '标记已使用',
+        'VLAN Group': 'VLAN组',
+        'Virtual machine': '虚拟机',
+        'Is active': '已激活',
+        'Auto sync enabled': '自动同步已启用'
     }
     if field.label in labelMap:
         flabel = labelMap[field.label]

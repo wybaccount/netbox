@@ -173,7 +173,7 @@ class BaseTable(tables.Table):
             'Module': '模块',
             'Management only': '仅限管理',
             'Speed (Kbps)': '速度(Kbps)',
-            'Duplex': '复式',
+            'Duplex': '双工',
             'Mode': '模式',
             'MAC Address': 'MAC地址',
             'PoE mode': 'PoE模式',

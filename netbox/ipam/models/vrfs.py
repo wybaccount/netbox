@@ -38,7 +38,7 @@ class VRF(PrimaryModel):
     )
     enforce_unique = models.BooleanField(
         default=True,
-        verbose_name='Enforce unique space',
+        verbose_name='强制唯一空间',
         help_text=_('Prevent duplicate prefixes/IP addresses within this VRF')
     )
     import_targets = models.ManyToManyField(

@@ -25,10 +25,10 @@ class PrefixStatusChoices(ChoiceSet):
     STATUS_DEPRECATED = 'deprecated'
 
     CHOICES = [
-        (STATUS_CONTAINER, 'Container', 'gray'),
-        (STATUS_ACTIVE, 'Active', 'blue'),
-        (STATUS_RESERVED, 'Reserved', 'cyan'),
-        (STATUS_DEPRECATED, 'Deprecated', 'red'),
+        (STATUS_CONTAINER, '容器', 'gray'),
+        (STATUS_ACTIVE, '活动', 'blue'),
+        (STATUS_RESERVED, '保留', 'cyan'),
+        (STATUS_DEPRECATED, '已废弃', 'red'),
     ]
 
 
@@ -44,9 +44,9 @@ class IPRangeStatusChoices(ChoiceSet):
     STATUS_DEPRECATED = 'deprecated'
 
     CHOICES = [
-        (STATUS_ACTIVE, 'Active', 'blue'),
-        (STATUS_RESERVED, 'Reserved', 'cyan'),
-        (STATUS_DEPRECATED, 'Deprecated', 'red'),
+        (STATUS_ACTIVE, '活动', 'blue'),
+        (STATUS_RESERVED, '保留', 'cyan'),
+        (STATUS_DEPRECATED, '已废弃', 'red'),
     ]
 
 
@@ -64,9 +64,9 @@ class IPAddressStatusChoices(ChoiceSet):
     STATUS_SLAAC = 'slaac'
 
     CHOICES = [
-        (STATUS_ACTIVE, 'Active', 'blue'),
-        (STATUS_RESERVED, 'Reserved', 'cyan'),
-        (STATUS_DEPRECATED, 'Deprecated', 'red'),
+        (STATUS_ACTIVE, '运行中', 'blue'),
+        (STATUS_RESERVED, '保留', 'cyan'),
+        (STATUS_DEPRECATED, '已废弃', 'red'),
         (STATUS_DHCP, 'DHCP', 'green'),
         (STATUS_SLAAC, 'SLAAC', 'purple'),
     ]
@@ -84,14 +84,14 @@ class IPAddressRoleChoices(ChoiceSet):
     ROLE_CARP = 'carp'
 
     CHOICES = (
-        (ROLE_LOOPBACK, 'Loopback', 'gray'),
-        (ROLE_SECONDARY, 'Secondary', 'blue'),
-        (ROLE_ANYCAST, 'Anycast', 'yellow'),
-        (ROLE_VIP, 'VIP', 'purple'),
-        (ROLE_VRRP, 'VRRP', 'green'),
-        (ROLE_HSRP, 'HSRP', 'green'),
-        (ROLE_GLBP, 'GLBP', 'green'),
-        (ROLE_CARP, 'CARP', 'green'),
+        (ROLE_LOOPBACK, '环回地址', 'gray'),
+        (ROLE_SECONDARY, '次要地址', 'blue'),
+        (ROLE_ANYCAST, '任播地址', 'yellow'),
+        (ROLE_VIP, '虚拟IP地址', 'purple'),
+        (ROLE_VRRP, '虚拟路由冗余协议', 'green'),
+        (ROLE_HSRP, '热备份路由协议', 'green'),
+        (ROLE_GLBP, '网关负载均衡协议', 'green'),
+        (ROLE_CARP, '公共地址冗余协议', 'green'),
     )
 
 
@@ -149,9 +149,9 @@ class VLANStatusChoices(ChoiceSet):
     STATUS_DEPRECATED = 'deprecated'
 
     CHOICES = [
-        (STATUS_ACTIVE, 'Active', 'blue'),
-        (STATUS_RESERVED, 'Reserved', 'cyan'),
-        (STATUS_DEPRECATED, 'Deprecated', 'red'),
+        (STATUS_ACTIVE, '活动', 'blue'),
+        (STATUS_RESERVED, '保留', 'cyan'),
+        (STATUS_DEPRECATED, '已废弃', 'red'),
     ]
 
 

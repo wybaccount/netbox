@@ -62,7 +62,6 @@ def bettertitle(value):
     original case of all others.
     """
     # table 顶部标题
-    print(value, 'value--------------')
     if value in VNP_map():
         return VNP_map()[value]
     else:
@@ -99,14 +98,30 @@ def meta(model, attr):
     # 表单新增标题 详情页tabs
     if getattr(model._meta, attr, '') == 'rack reservation':
         return '机柜预定'
+    elif getattr(model._meta, attr, '') == 'FHRP group':
+        return 'FHRP组'
+    elif getattr(model._meta, attr, '') == 'VLAN group':
+        return 'VLAN组'
     elif getattr(model._meta, attr, '') == 'power port':
         return '电源端口'
+    elif getattr(model._meta, attr, '') == 'power outlet':
+        return '电源插座'
+    elif getattr(model._meta, attr, '') == 'ASN range':
+        return 'ASN范围'
+    elif getattr(model._meta, attr, '') == 'module bay':
+        return '模块插槽'
+    elif getattr(model._meta, attr, '') == 'device bay':
+        return '设备插槽'
     elif getattr(model._meta, attr, '') == 'console server port':
         return '控制台服务器端口'
     elif getattr(model._meta, attr, '') == 'tenant':
         return '租户'
     elif getattr(model._meta, attr, '') == 'tenant group':
         return '租户组'
+    elif getattr(model._meta, attr, '') == 'contact':
+        return '联系方式'
+    elif getattr(model._meta, attr, '') == 'contact role':
+        return '联系人角色'
     elif getattr(model._meta, attr, '') == 'contact group':
         return '联系组'
     elif getattr(model._meta, attr, '') == 'rack role':
@@ -128,7 +143,9 @@ def meta(model, attr):
     elif getattr(model._meta, attr, '') == 'virtual device context':
         return '虚拟设备上下文'
     elif getattr(model._meta, attr, '') == 'inventory item role':
-        return '库存项目角色'
+        return '库存项角色'
+    elif getattr(model._meta, attr, '') == 'inventory item':
+        return '库存项'
     elif getattr(model._meta, attr, '') == 'IP address':
         return 'IP地址'
     elif getattr(model._meta, attr, '') == 'IP range':

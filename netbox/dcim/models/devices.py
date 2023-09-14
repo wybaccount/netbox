@@ -103,7 +103,7 @@ class DeviceType(PrimaryModel, WeightMixin):
     )
     is_full_depth = models.BooleanField(
         default=True,
-        verbose_name='Is full depth',
+        verbose_name='全深度',
         help_text=_('Device consumes both front and rear rack faces')
     )
     subdevice_role = models.CharField(
@@ -415,7 +415,7 @@ class DeviceRole(OrganizationalModel):
     )
     vm_role = models.BooleanField(
         default=True,
-        verbose_name='VM Role',
+        verbose_name='虚拟机角色',
         help_text=_('Virtual machines may be assigned to this role')
     )
     config_template = models.ForeignKey(

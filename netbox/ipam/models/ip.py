@@ -737,7 +737,7 @@ class IPAddress(PrimaryModel):
         max_length=255,
         blank=True,
         validators=[DNSValidator],
-        verbose_name='DNS Name',
+        verbose_name='DNS名称',
         help_text=_('Hostname or FQDN (not case-sensitive)')
     )
 

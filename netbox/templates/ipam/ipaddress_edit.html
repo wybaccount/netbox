@@ -10,7 +10,7 @@
 {% block form %}
     <div class="field-group my-5">
       <div class="row mb-2">
-        <h5 class="offset-sm-3">IP Address</h5>
+        <h5 class="offset-sm-3">IP地址</h5>
       </div>
       {% render_field form.address %}
       {% render_field form.status %}
@@ -23,7 +23,7 @@
 
     <div class="field-group my-5">
       <div class="row mb-2">
-        <h5 class="offset-sm-3">Tenancy</h5>
+        <h5 class="offset-sm-3">租户</h5>
       </div>
       {% render_field form.tenant_group %}
       {% render_field form.tenant %}
@@ -31,24 +31,24 @@
 
     <div class="field-group my-5">
       <div class="row mb-2">
-        <h5 class="offset-sm-3">Interface Assignment</h5>
+        <h5 class="offset-sm-3">接口分配</h5>
       </div>
       <div class="row mb-2">
         <div class="offset-sm-3">
           <ul class="nav nav-pills" role="tablist">
             <li role="presentation" class="nav-item">
               <button role="tab" type="button" id="device_tab" data-bs-toggle="tab" aria-controls="device" data-bs-target="#device" class="nav-link {% if not form.initial.vminterface and not form.initial.fhrpgroup %}active{% endif %}">
-                Device
+                设备
               </button>
             </li>
             <li role="presentation" class="nav-item">
               <button role="tab" type="button" id="vm_tab" data-bs-toggle="tab" aria-controls="vm" data-bs-target="#vm" class="nav-link {% if form.initial.vminterface %}active{% endif %}">
-                Virtual Machine
+                虚拟机
               </button>
             </li>
             <li role="presentation" class="nav-item">
               <button role="tab" type="button" id="fhrpgroup_tab" data-bs-toggle="tab" aria-controls="fhrpgroup" data-bs-target="#fhrpgroup" class="nav-link {% if form.initial.fhrpgroup %}active{% endif %}">
-                FHRP Group
+                FHRP组
               </button>
             </li>
           </ul>
@@ -70,7 +70,7 @@
 
     <div class="field-group my-5">
       <div class="row mb-2">
-        <h5 class="offset-sm-3">NAT IP (Inside)</h5>
+        <h5 class="offset-sm-3">NAT内部IP地址</h5>
       </div>
       <div class="row mb-2">
           {% render_field form.nat_inside %}
@@ -84,7 +84,7 @@
     {% if form.custom_fields %}
       <div class="field-group my-5">
         <div class="row mb-2">
-          <h5 class="offset-sm-3">Custom Fields</h5>
+          <h5 class="offset-sm-3">自定义字段</h5>
         </div>
         {% render_custom_fields form %}
       </div>

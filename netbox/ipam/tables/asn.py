@@ -24,7 +24,7 @@ class ASNRangeTable(TenancyColumnsMixin, NetBoxTable):
     asn_count = columns.LinkedCountColumn(
         viewname='ipam:asn_list',
         url_params={'asn_id': 'pk'},
-        verbose_name=_('ASN Count')
+        verbose_name=_('ASN数量')
     )
 
     class Meta(NetBoxTable.Meta):

@@ -9,6 +9,7 @@
       data-bs-target="#htmx-modal"
       hx-get="{% url 'htmx_object_selector' %}?_model={{ widget.attrs.selector }}&target={{ widget.attrs.id }}"
       hx-target="#htmx-modal-content"
+      style="display: none;"
     >
       <i class="mdi mdi-database-search-outline"></i>
     </button>

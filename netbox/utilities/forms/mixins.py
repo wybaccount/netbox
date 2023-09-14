@@ -57,14 +57,44 @@ class BootstrapMixin:
                     'Physical address': '物理地址',
                     'Shipping address': '邮寄地址',
                     'Latitude': '纬度',
-                    'Longitude': '经度'
+                    'Longitude': '经度',
+                    'Outer width': '宽度',
+                    'Outer depth': '深度',
+                    'Weight': '重量',
+                    'Max weight': '最大重量',
+                    'Facility ID': '设施ID',
+                    'Serial number': '序列号',
+                    'Asset tag': '资产标签',
+                    'Mounting depth': '安装深度',
+                    'Descending units': '降序单位',
+                    'Weight unit': '重量单位',
+                    'Title': '标题',
+                    'Phone': '电话',
+                    'Email': '电子邮件',
+                    'Address': '地址',
+                    'Link': '链接',
+                    'Position': '位置',
+                    'Priority': '优先级',
+                    'NAPALM driver': 'NAPALM驱动',
+                    'NAPALM arguments': 'NAPALM参数',
+                    'Domain': '域',
+                    'Identifier': '标识符',
+                    'Comments': '评论',
+                    'Model': '模型',
+                    'Part number': '零件号',
+                    'Is full depth': '全深度',
+                    'Speed (Kbps)': '速度(Kbps)',
+                    'MAC address': 'MAC地址',
+                    'Transmit power (dBm)': '发射功率(dBm)',
+                    'Channel frequency (MHz)': '信道频率(MHz)',
+                    'Channel width (MHz)': '信道宽度(MHz)'
                 }
                 if field.label in labelMap:
                     fLabel = labelMap[field.label]
                 else:
                     fLabel = field.label
 
-                field.widget.attrs['placeholder'] = fLabel
+                field.widget.attrs['placeholder'] = ''
 
     def is_valid(self):
         is_valid = super().is_valid()

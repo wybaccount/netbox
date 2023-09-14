@@ -209,9 +209,9 @@ class ActionsColumn(tables.Column):
     attrs = {'td': {'class': 'text-end text-nowrap noprint'}}
     empty_values = ()
     actions = {
-        'edit': ActionsItem('Edit', 'pencil', 'change', 'warning'),
-        'delete': ActionsItem('Delete', 'trash-can-outline', 'delete', 'danger'),
-        'changelog': ActionsItem('Changelog', 'history'),
+        'edit': ActionsItem('编辑', 'pencil', 'change', 'warning'),
+        'delete': ActionsItem('删除', 'trash-can-outline', 'delete', 'danger'),
+        'changelog': ActionsItem('更新日志', 'history'),
     }
 
     def __init__(self, *args, actions=('edit', 'delete', 'changelog'), extra_buttons='', split_actions=True, **kwargs):

@@ -27,7 +27,7 @@ class TenantGroupForm(NetBoxModelForm):
     slug = SlugField()
 
     fieldsets = (
-        ('Tenant Group', (
+        ('租户组', (
             'parent', 'name', 'slug', 'description', 'tags',
         )),
     )
@@ -48,7 +48,7 @@ class TenantForm(NetBoxModelForm):
     comments = CommentField()
 
     fieldsets = (
-        ('Tenant', ('name', 'slug', 'group', 'description', 'tags')),
+        ('租户', ('name', 'slug', 'group', 'description', 'tags')),
     )
 
     class Meta:
@@ -70,7 +70,7 @@ class ContactGroupForm(NetBoxModelForm):
     slug = SlugField()
 
     fieldsets = (
-        ('Contact Group', (
+        ('联系人群组', (
             'parent', 'name', 'slug', 'description', 'tags',
         )),
     )
@@ -84,7 +84,7 @@ class ContactRoleForm(NetBoxModelForm):
     slug = SlugField()
 
     fieldsets = (
-        ('Contact Role', (
+        ('联系人角色', (
             'name', 'slug', 'description', 'tags',
         )),
     )
@@ -102,7 +102,7 @@ class ContactForm(NetBoxModelForm):
     comments = CommentField()
 
     fieldsets = (
-        ('Contact', ('group', 'name', 'title', 'phone', 'email', 'address', 'link', 'description', 'tags')),
+        ('联系方式', ('group', 'name', 'title', 'phone', 'email', 'address', 'link', 'description', 'tags')),
     )
 
     class Meta:
