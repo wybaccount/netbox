@@ -8,10 +8,10 @@
     {% if nonracked_devices %}
         <table class="table table-hover">
             <tr>
-                <th>Name</th>
-                <th>Role</th>
-                <th>Type</th>
-                <th colspan="2">Parent Device</th>
+                <th>名称</th>
+                <th>角色</th>
+                <th>类型</th>
+                <th colspan="2">父设备</th>
             </tr>
             {% for device in nonracked_devices %}
             <tr{% if device.device_type.u_height %} class="warning"{% endif %}>
@@ -54,21 +54,21 @@
         <div class="card-footer text-end noprint">
             <a href="{% url 'dcim:device_add' %}?site={{ object.site.pk }}&rack={{ object.pk }}" class="btn btn-primary btn-sm">
                 <i class="mdi mdi-plus-thick" aria-hidden="true"></i>
-                Add a Non-Racked Device
+                添加非机柜设备
             </a>
         </div>
         {% elif object|meta:'verbose_name' == 'site' %}
         <div class="card-footer text-end noprint">
             <a href="{% url 'dcim:device_add' %}?site={{ object.pk }}" class="btn btn-primary btn-sm">
                 <i class="mdi mdi-plus-thick" aria-hidden="true"></i>
-                Add a Non-Racked Device
+                添加非机柜设备
             </a>
         </div>
         {% elif object|meta:'verbose_name' == 'location' %}
         <div class="card-footer text-end noprint">
             <a href="{% url 'dcim:device_add' %}?site={{ object.site.pk }}&location={{ object.pk }}" class="btn btn-primary btn-sm">
                 <i class="mdi mdi-plus-thick" aria-hidden="true"></i>
-                Add a Non-Racked Device
+                添加非机柜设备
             </a>
         </div>
         {% endif %}

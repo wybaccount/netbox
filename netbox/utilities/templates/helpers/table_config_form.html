@@ -4,7 +4,7 @@
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title">Table Configuration</h5>
+        <h5 class="modal-title">表配置</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <form class="form-horizontal userconfigform" data-url="{% url 'users-api:userconfig-list' %}" data-config-root="tables.{{ form.table_name }}">
@@ -16,10 +16,10 @@
           <div class="col-2 d-flex align-items-center">
             <div>
               <a class="btn btn-success btn-sm w-100 my-2" id="add_columns">
-                <i class="mdi mdi-arrow-right-bold"></i> Add
+                <i class="mdi mdi-arrow-right-bold"></i> 添加
               </a>
               <a class="btn btn-danger btn-sm w-100 my-2" id="remove_columns">
-                <i class="mdi mdi-arrow-left-bold"></i> Remove
+                <i class="mdi mdi-arrow-left-bold"></i> 移除
               </a>
             </div>
           </div>
@@ -27,16 +27,16 @@
             {{ form.columns.label }}
             {{ form.columns }}
             <a class="btn btn-primary btn-sm mt-2" id="move-option-up" data-target="id_columns">
-                <i class="mdi mdi-arrow-up-bold"></i> Move Up
+                <i class="mdi mdi-arrow-up-bold"></i> 上移
             </a>
             <a class="btn btn-primary btn-sm mt-2" id="move-option-down" data-target="id_columns">
-                <i class="mdi mdi-arrow-down-bold"></i> Move Down
+                <i class="mdi mdi-arrow-down-bold"></i> 下移
             </a>
           </div>
         </div>
         <div class="modal-footer">
-            <button type="submit" class="btn btn-outline-danger" id="reset_tableconfig" value="Reset">Reset</button>
-            <button type="submit" class="btn btn-primary" id="save_tableconfig" value="Save">Save</button>
+            <button type="submit" class="btn btn-outline-danger" id="reset_tableconfig" value="Reset">重置</button>
+            <button type="submit" class="btn btn-primary" id="save_tableconfig" value="Save">保存</button>
         </div>
       </form>
     </div>

@@ -2,12 +2,12 @@
 {% load helpers %}
 
 {% block extra_controls %}
-    <button class="btn btn-sm btn-outline-secondary toggle-depth" type="button">
+    <button class="btn btn-sm btn-outline-secondary toggle-depth" style="display: none;" type="button">
         Hide Depth Indicators
     </button>
     <div class="dropdown">
         <button class="btn btn-sm btn-outline-secondary dropdown-toggle" type="button" id="max_depth" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-            Max Depth{% if "depth__lte" in request.GET %}: {{ request.GET.depth__lte }}{% endif %}
+            最大深度{% if "depth__lte" in request.GET %}: {{ request.GET.depth__lte }}{% endif %}
         </button>
         <ul class="dropdown-menu" aria-labelledby="max_depth">
             {% if request.GET.depth__lte %}
@@ -24,7 +24,7 @@
     </div>
     <div class="dropdown">
         <button class="btn btn-sm btn-outline-secondary dropdown-toggle" type="button" id="max_length" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-            Max Length{% if "mask_length__lte" in request.GET %}: {{ request.GET.mask_length__lte }}{% endif %}
+            最大长度{% if "mask_length__lte" in request.GET %}: {{ request.GET.mask_length__lte }}{% endif %}
         </button>
         <ul class="dropdown-menu" aria-labelledby="max_length">
             {% if request.GET.mask_length__lte %}

@@ -24,6 +24,10 @@
               >
                 {% if column.header == 'IP Address' %}
                 <span>IP 地址</span>
+                {% elif column.header == 'VLAN Group' %}
+                <span>VLAN组</span>
+                {% elif column.header == 'Prefix (Flat)' %}
+                <span>前缀（扁平）</span>
                 {% elif column.header == 'Status' %}
                 <span>状态</span>
                 {% elif column.header == 'Role' %}
@@ -91,7 +95,7 @@
                 {% elif column.header == 'Scope type' %}
                 <span>范围类型</span>
                 {% elif column.header == 'Group ID' %}
-                <span>群组ID</span>
+                <span>组ID</span>
                 {% elif column.header == 'Protocol' %}
                 <span>协议</span>
                 {% elif column.header == 'Authentication type' %}
@@ -172,6 +176,12 @@
                 <span>标签</span>
                 {% elif column.header == 'Enabled' %}
                 <span>启用</span>
+                {% elif column.header == 'Part ID' %}
+                <span>零件编号</span>
+                {% elif column.header == 'FHRP Groups' %}
+                <span>第一跳冗余协议组</span>
+                {% elif column.header == 'Untagged VLAN' %}
+                <span>未标记的虚拟局域网</span>
                 {% elif column.header == 'Rear port' %}
                 <span>背面端口</span>
                 {% elif column.header == 'Position' %}
@@ -349,7 +359,7 @@
                 {% elif column.header == 'Side Z' %}
                 <span>Z端</span>
                 {% else %}
-                {{ column.header }}
+                {{ column.header }}111
                 {% endif %}
               </a>
             </th>
@@ -357,6 +367,18 @@
           <th {{ column.attrs.th.as_html }}>
             {% if column.header == 'Utilization' %}
             <span>使用率</span>
+            {% elif column.header == 'NAT (Inside)' %}
+              <span>网络地址转换（内部）</span>
+            {% elif column.header == 'NAT (Outside)' %}
+              <span>网络地址转换（外部）</span>
+            {% elif column.header == 'Interface' %}
+              <span>接口</span>
+            {% elif column.header == 'Device/VM' %}
+              <span>设备/虚拟机</span>
+            {% elif column.header == 'FHRP Groups' %}
+              <span>第一跳冗余协议组</span>
+            {% elif column.header == 'Tagged VLANs' %}
+              <span>已标记的虚拟局域网</span>
             {% elif column.header == 'Synced' %}
               <span>已同步</span>
             {% elif column.header == 'Size (bytes)' %}

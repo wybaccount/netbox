@@ -12,12 +12,13 @@ from netbox.graphql.views import GraphQLView
 from netbox.views import HomeView, StaticMediaFailureView, SearchView, htmx
 from users.views import LoginView, LogoutView
 from .admin import admin_site
+from dcim import views
 
 
 _patterns = [
 
     # Base views
-    path('', HomeView.as_view(), name='home'),
+    path('', views.SiteListView.as_view(), name='home'),
     path('search/', SearchView.as_view(), name='search'),
 
     # Login/logout
