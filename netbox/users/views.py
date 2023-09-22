@@ -96,7 +96,7 @@ class LoginView(View):
             # Authenticate user
             auth_login(request, form.get_user())
             logger.info(f"User {request.user} successfully authenticated")
-            messages.success(request, f"Logged in as {request.user}.")
+            messages.success(request, f"以{request.user}身份登录.")
 
             # Ensure the user has a UserConfig defined. (This should normally be handled by
             # create_userconfig() on user creation.)

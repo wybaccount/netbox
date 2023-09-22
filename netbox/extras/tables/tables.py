@@ -275,7 +275,7 @@ class ConfigTemplateTable(NetBoxTable):
 
 class ObjectChangeTable(NetBoxTable):
     time = tables.DateTimeColumn(
-        linkify=True,
+        # linkify=True,
         format=settings.SHORT_DATETIME_FORMAT,
         verbose_name='时间'
     )
